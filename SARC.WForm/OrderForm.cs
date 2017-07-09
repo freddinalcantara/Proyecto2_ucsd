@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SARC.WForm
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class OrderForm  : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public OrderForm()
         {
             InitializeComponent();
         }

@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace SARC.WForm
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class ReservationForm : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public ReservationForm()
         {
             InitializeComponent();
         }
-
-
     }
 }
