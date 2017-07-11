@@ -43,6 +43,7 @@
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "Orden";
             this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton2
             // 
@@ -53,6 +54,7 @@
             this.metroButton2.TabIndex = 1;
             this.metroButton2.Text = "Reservaciones";
             this.metroButton2.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton3
             // 

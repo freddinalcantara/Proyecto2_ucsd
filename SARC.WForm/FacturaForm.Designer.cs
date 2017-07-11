@@ -36,9 +36,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(174, 192);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 13);
+            this.label2.Size = new System.Drawing.Size(353, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "TODO: aqui se veran las facturas disponibles";
+            this.label2.Text = "TODO: aqui se veran las facturas disponibles remplazar con report viewer\r\n";
             // 
             // FacturaForm
             // 
