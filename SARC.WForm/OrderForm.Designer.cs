@@ -30,12 +30,10 @@
         {
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroComboBox1
@@ -55,40 +53,6 @@
             this.metroButton1.TabIndex = 1;
             this.metroButton1.Text = "Nuevo CLiente";
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(63, 164);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(42, 19);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Menu";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(63, 187);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(189, 95);
-            this.listBox1.TabIndex = 3;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(299, 187);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(189, 95);
-            this.listBox2.TabIndex = 5;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(299, 164);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(47, 19);
-            this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "Orden";
-            // 
             // metroButton2
             // 
             this.metroButton2.Location = new System.Drawing.Point(63, 331);
@@ -105,21 +69,26 @@
             this.metroButton3.TabIndex = 7;
             this.metroButton3.Text = "Cancelar";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(63, 145);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 8;
+            // 
             // OrderForm
             // 
-            this.ClientSize = new System.Drawing.Size(549, 424);
+            this.ClientSize = new System.Drawing.Size(836, 535);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroComboBox1);
             this.Name = "OrderForm";
             this.Text = "Orden";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -127,11 +96,8 @@
 
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
