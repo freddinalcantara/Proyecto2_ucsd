@@ -32,6 +32,7 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroButton1
@@ -76,11 +77,23 @@
             this.metroButton4.Text = "Facturas";
             this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // metroButton5
+            // 
+            this.metroButton5.Location = new System.Drawing.Point(11, 417);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(617, 82);
+            this.metroButton5.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroButton5.TabIndex = 4;
+            this.metroButton5.Text = "Combos";
+            this.metroButton5.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 450);
+            this.ClientSize = new System.Drawing.Size(638, 519);
+            this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
@@ -98,6 +111,7 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
+        private MetroFramework.Controls.MetroButton metroButton5;
     }
 }
 

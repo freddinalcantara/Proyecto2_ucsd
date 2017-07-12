@@ -30,5 +30,13 @@ namespace SARC.WForm
             form.Show();
             this.Hide();
         }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            ComboForm form = new ComboForm();
+            form.Show();
+            this.Hide();
+
+        }
     }
 }

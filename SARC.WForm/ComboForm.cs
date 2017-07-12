@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace SARC.WForm
 {
-    public partial class OrderForm  : MetroFramework.Forms.MetroForm
+    public partial class ComboForm : MetroFramework.Forms.MetroForm
     {
-        public OrderForm()
+        public ComboForm()
         {
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
         {
 
         }

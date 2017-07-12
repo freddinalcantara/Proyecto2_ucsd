@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComboForm.Designer.cs">
+      <DependentUpon>ComboForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <Compile Include="ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ComboForm.resx">
+      <DependentUpon>ComboForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,13 +147,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SARC.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SARC_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SARC.mdf</DependentUpon>
-    </Content>
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <ItemGroup>
