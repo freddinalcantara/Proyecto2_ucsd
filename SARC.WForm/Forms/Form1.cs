@@ -38,5 +38,12 @@ namespace SARC.WForm
             this.Hide();
 
         }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            FormCliente form = new FormCliente();
+            form.Show();
+            this.Hide();
+        }
     }
 }

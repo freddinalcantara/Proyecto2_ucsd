@@ -70,54 +70,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComboForm.cs">
+    <Compile Include="Forms\ComboForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ComboForm.Designer.cs">
+    <Compile Include="Forms\ComboForm.Designer.cs">
       <DependentUpon>ComboForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FacturaForm.cs">
+    <Compile Include="Forms\FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacturaForm.Designer.cs">
+    <Compile Include="Forms\FacturaForm.Designer.cs">
       <DependentUpon>FacturaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCliente.cs">
+    <Compile Include="Forms\FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCliente.Designer.cs">
+    <Compile Include="Forms\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderForm.cs">
+    <Compile Include="Forms\OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderForm.Designer.cs">
+    <Compile Include="Forms\OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReservationForm.cs">
+    <Compile Include="Forms\ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReservationForm.Designer.cs">
+    <Compile Include="Forms\ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ComboForm.resx">
+    <EmbeddedResource Include="Forms\ComboForm.resx">
       <DependentUpon>ComboForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FacturaForm.resx">
+    <EmbeddedResource Include="Forms\FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderForm.resx">
+    <EmbeddedResource Include="Forms\FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -129,7 +132,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReservationForm.resx">
+    <EmbeddedResource Include="Forms\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

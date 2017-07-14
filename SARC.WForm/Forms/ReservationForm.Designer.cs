@@ -41,6 +41,7 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.BtnBuscarCliente = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.metroComboBox2.ItemHeight = 23;
             this.metroComboBox2.Location = new System.Drawing.Point(143, 178);
             this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(305, 29);
+            this.metroComboBox2.Size = new System.Drawing.Size(207, 29);
             this.metroComboBox2.TabIndex = 9;
             // 
             // metroTextBox1
@@ -154,11 +155,21 @@
             this.metroLabel5.TabIndex = 23;
             this.metroLabel5.Text = "Cantidad de sillas";
             // 
+            // BtnBuscarCliente
+            // 
+            this.BtnBuscarCliente.Location = new System.Drawing.Point(356, 178);
+            this.BtnBuscarCliente.Name = "BtnBuscarCliente";
+            this.BtnBuscarCliente.Size = new System.Drawing.Size(93, 29);
+            this.BtnBuscarCliente.TabIndex = 24;
+            this.BtnBuscarCliente.Text = "Buscar";
+            this.BtnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
             // ReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 435);
+            this.Controls.Add(this.BtnBuscarCliente);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.metroLabel4);
@@ -173,6 +184,7 @@
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroComboBox2);
             this.Name = "ReservationForm";
+            this.Resizable = false;
             this.Text = "Reservacion";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
@@ -194,5 +206,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroButton BtnBuscarCliente;
     }
 }

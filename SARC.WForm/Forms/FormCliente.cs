@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SARC.WForm
 {
-    public partial class FormCliente : Form
+    public partial class FormCliente : MetroFramework.Forms.MetroForm
     {
         public FormCliente()
         {
             InitializeComponent();
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

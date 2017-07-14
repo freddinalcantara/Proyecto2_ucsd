@@ -36,6 +36,10 @@
             this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OpcionesEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
@@ -53,10 +57,6 @@
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OpcionesEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
@@ -143,6 +143,27 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(806, 150);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // Cant
+            // 
+            this.Cant.HeaderText = "Cant";
+            this.Cant.Name = "Cant";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 300;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // OpcionesEliminar
+            // 
+            this.OpcionesEliminar.HeaderText = "Eliminar";
+            this.OpcionesEliminar.Name = "OpcionesEliminar";
             // 
             // listBox1
             // 
@@ -294,27 +315,6 @@
             this.metroTextBox4.Size = new System.Drawing.Size(180, 23);
             this.metroTextBox4.TabIndex = 23;
             // 
-            // Cant
-            // 
-            this.Cant.HeaderText = "Cant";
-            this.Cant.Name = "Cant";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 300;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // OpcionesEliminar
-            // 
-            this.OpcionesEliminar.HeaderText = "Eliminar";
-            this.OpcionesEliminar.Name = "OpcionesEliminar";
-            // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
@@ -384,6 +384,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroComboBox2);
             this.Name = "OrderForm";
+            this.Resizable = false;
             this.Text = "Orden";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

@@ -66,6 +66,7 @@
             this.metroButton3.TabIndex = 2;
             this.metroButton3.Text = "Clientes";
             this.metroButton3.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton4
             // 
@@ -99,6 +100,7 @@
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Name = "Form1";
+            this.Resizable = false;
             this.Text = "SARC";
             this.Theme = MetroFramework.MetroThemeStyle.Light;
             this.ResumeLayout(false);
