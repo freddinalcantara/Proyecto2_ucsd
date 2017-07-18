@@ -15,6 +15,7 @@ namespace SARC.WForm
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -44,6 +45,11 @@ namespace SARC.WForm
             FormCliente form = new FormCliente();
             form.Show();
             this.Hide();
+        }
+
+        private void reservacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

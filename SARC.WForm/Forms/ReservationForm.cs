@@ -21,5 +21,10 @@ namespace SARC.WForm
         {
 
         }
+
+        private void ReservationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
