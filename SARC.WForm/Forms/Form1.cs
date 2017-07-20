@@ -18,38 +18,44 @@ namespace SARC.WForm
             
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            OrderForm form = new OrderForm();
-            form.Show();
-            this.Hide();
-        }
 
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            ReservationForm form = new ReservationForm();
-            form.Show();
-            this.Hide();
-        }
-
-        private void metroButton5_Click(object sender, EventArgs e)
-        {
-            ComboForm form = new ComboForm();
-            form.Show();
-            this.Hide();
-
-        }
-
-        private void metroButton3_Click(object sender, EventArgs e)
-        {
-            FormCliente form = new FormCliente();
-            form.Show();
-            this.Hide();
-        }
 
         private void reservacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void reservarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReservationForm formulario = new ReservationForm();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCliente formulario = new FormCliente();
+            formulario.MdiParent = this;
+            formulario.Show();
+                }
+
+        private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FacturaForm formulario = new FacturaForm();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void ordenarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.OrderForm formulario = new Forms.OrderForm();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
