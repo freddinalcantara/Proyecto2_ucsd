@@ -70,6 +70,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Models\Bill.cs" />
+    <Compile Include="Domain\Models\Cliente.cs" />
+    <Compile Include="Domain\Models\Combo.cs" />
+    <Compile Include="Domain\Models\Food.cs" />
+    <Compile Include="Domain\Models\Order.cs" />
+    <Compile Include="Domain\Models\Reservation.cs" />
+    <Compile Include="Domain\Models\Stand.cs" />
     <Compile Include="Forms\ComboForm.cs">
       <SubType>Form</SubType>
     </Compile>
