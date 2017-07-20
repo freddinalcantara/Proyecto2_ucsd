@@ -110,7 +110,7 @@
             this.metroRadioButton1.TabIndex = 8;
             this.metroRadioButton1.TabStop = true;
             this.metroRadioButton1.Text = "Ahora";
-            this.metroRadioButton1.UseVisualStyleBackColor = true;
+            
             // 
             // metroRadioButton2
             // 
@@ -121,7 +121,7 @@
             this.metroRadioButton2.TabIndex = 8;
             this.metroRadioButton2.TabStop = true;
             this.metroRadioButton2.Text = "Llevar";
-            this.metroRadioButton2.UseVisualStyleBackColor = true;
+            
             // 
             // metroButton1
             // 
