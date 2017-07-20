@@ -121,20 +121,36 @@
             this.metroRadioButton1.AutoSize = true;
             this.metroRadioButton1.Location = new System.Drawing.Point(23, 132);
             this.metroRadioButton1.Name = "metroRadioButton1";
+<<<<<<< HEAD
             this.metroRadioButton1.Size = new System.Drawing.Size(54, 15);
             this.metroRadioButton1.TabIndex = 4;
             this.metroRadioButton1.Text = "Llevar";
             this.metroRadioButton1.UseSelectable = true;
+=======
+            this.metroRadioButton1.Size = new System.Drawing.Size(55, 15);
+            this.metroRadioButton1.TabIndex = 8;
+            this.metroRadioButton1.TabStop = true;
+            this.metroRadioButton1.Text = "Ahora";
+            
+>>>>>>> master
             // 
             // metroRadioButton2
             // 
             this.metroRadioButton2.AutoSize = true;
             this.metroRadioButton2.Location = new System.Drawing.Point(84, 132);
             this.metroRadioButton2.Name = "metroRadioButton2";
+<<<<<<< HEAD
             this.metroRadioButton2.Size = new System.Drawing.Size(55, 15);
             this.metroRadioButton2.TabIndex = 5;
             this.metroRadioButton2.Text = "Ahora";
             this.metroRadioButton2.UseSelectable = true;
+=======
+            this.metroRadioButton2.Size = new System.Drawing.Size(54, 15);
+            this.metroRadioButton2.TabIndex = 8;
+            this.metroRadioButton2.TabStop = true;
+            this.metroRadioButton2.Text = "Llevar";
+            
+>>>>>>> master
             // 
             // metroComboBox1
             // 

@@ -47,7 +47,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+=======
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+>>>>>>> master
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
@@ -69,12 +74,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Forms\BuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\BuscarCliente.Designer.cs">
       <DependentUpon>BuscarCliente.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Domain\Models\Bill.cs" />
+    <Compile Include="Domain\Models\Cliente.cs" />
+    <Compile Include="Domain\Models\Combo.cs" />
+    <Compile Include="Domain\Models\Food.cs" />
+    <Compile Include="Domain\Models\Order.cs" />
+    <Compile Include="Domain\Models\Reservation.cs" />
+    <Compile Include="Domain\Models\Stand.cs" />
+>>>>>>> master
     <Compile Include="Forms\ComboForm.cs">
       <SubType>Form</SubType>
     </Compile>
