@@ -8,6 +8,7 @@ namespace SARC.WForm.Domain.Models
 {
     public class Order
     {
+        public int Id { get; set; }
         public Cliente Cliente { get; set; }
         public string TipoOrden { get; set; }
         public Stand Stand { get; set; }
