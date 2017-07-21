@@ -34,12 +34,6 @@
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDENTIFICACION_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMERO1CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
@@ -101,13 +95,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_CLIENTE,
-            this.NombreCliente,
-            this.ApellidoCliente,
-            this.IDENTIFICACION_CLIENTE,
-            this.NUMERO1CLIENTE,
-            this.TELEFONO_CLIENTE});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -135,36 +122,6 @@
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(679, 214);
             this.metroGrid1.TabIndex = 2;
-            // 
-            // ID_CLIENTE
-            // 
-            this.ID_CLIENTE.HeaderText = "ID_CLIENTE";
-            this.ID_CLIENTE.Name = "ID_CLIENTE";
-            // 
-            // NombreCliente
-            // 
-            this.NombreCliente.HeaderText = "NOMBRES";
-            this.NombreCliente.Name = "NombreCliente";
-            // 
-            // ApellidoCliente
-            // 
-            this.ApellidoCliente.HeaderText = "APELLIDO";
-            this.ApellidoCliente.Name = "ApellidoCliente";
-            // 
-            // IDENTIFICACION_CLIENTE
-            // 
-            this.IDENTIFICACION_CLIENTE.HeaderText = "IDENTIFICACION";
-            this.IDENTIFICACION_CLIENTE.Name = "IDENTIFICACION_CLIENTE";
-            // 
-            // NUMERO1CLIENTE
-            // 
-            this.NUMERO1CLIENTE.HeaderText = "NUMERO_CELULAR";
-            this.NUMERO1CLIENTE.Name = "NUMERO1CLIENTE";
-            // 
-            // TELEFONO_CLIENTE
-            // 
-            this.TELEFONO_CLIENTE.HeaderText = "NUMERO_TELEFONO";
-            this.TELEFONO_CLIENTE.Name = "TELEFONO_CLIENTE";
             // 
             // metroButton1
             // 
@@ -208,7 +165,6 @@
             this.Name = "BuscarCliente";
             this.Resizable = false;
             this.Text = "Clientes";
-            
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -221,12 +177,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDENTIFICACION_CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NUMERO1CLIENTE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO_CLIENTE;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
     }

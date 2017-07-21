@@ -131,6 +131,10 @@
     <Compile Include="Migrations\201707210221279_InitialMigration.Designer.cs">
       <DependentUpon>201707210221279_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707210317381_PopulateFood.cs" />
+    <Compile Include="Migrations\201707210317381_PopulateFood.Designer.cs">
+      <DependentUpon>201707210317381_PopulateFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -157,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707210221279_InitialMigration.resx">
       <DependentUpon>201707210221279_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707210317381_PopulateFood.resx">
+      <DependentUpon>201707210317381_PopulateFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

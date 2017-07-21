@@ -57,5 +57,12 @@ namespace SARC.WForm
         {
             this.Close();
         }
+
+        private void mantenimientoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ComboForm formulario = new ComboForm();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
     }
 }
