@@ -10,23 +10,17 @@ using System.Windows.Forms;
 
 namespace SARC.WForm.Forms
 {
-    public partial class OrderForm : MetroFramework.Forms.MetroForm
+    public partial class BuscarCliente : MetroFramework.Forms.MetroForm
     {
-        public OrderForm()
+        public BuscarCliente()
         {
             InitializeComponent();
-            BuscarCliente form = new BuscarCliente();
-            form.Show();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void metroButton3_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void metroLabel6_Click(object sender, EventArgs e)
-        {
-
+            FormCliente formulario = new FormCliente();
+            formulario.Show();
         }
     }
 }
