@@ -64,5 +64,12 @@ namespace SARC.WForm
             formulario.MdiParent = this;
             formulario.Show();
         }
+
+        private void alimentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.InventarioForm formulario = new Forms.InventarioForm();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
     }
 }

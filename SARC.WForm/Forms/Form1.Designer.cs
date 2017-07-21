@@ -43,6 +43,8 @@
             this.reporteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.combosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alimentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,8 @@
             this.facturasToolStripMenuItem,
             this.ordenToolStripMenuItem,
             this.reporteriaToolStripMenuItem,
-            this.combosToolStripMenuItem});
+            this.combosToolStripMenuItem,
+            this.inventarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(759, 26);
@@ -168,6 +171,21 @@
             this.mantenimientoToolStripMenuItem1.Text = "Mantenimiento";
             this.mantenimientoToolStripMenuItem1.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem1_Click);
             // 
+            // inventarioToolStripMenuItem
+            // 
+            this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alimentosToolStripMenuItem});
+            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(83, 22);
+            this.inventarioToolStripMenuItem.Text = "Inventario";
+            // 
+            // alimentosToolStripMenuItem
+            // 
+            this.alimentosToolStripMenuItem.Name = "alimentosToolStripMenuItem";
+            this.alimentosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alimentosToolStripMenuItem.Text = "Alimentos";
+            this.alimentosToolStripMenuItem.Click += new System.EventHandler(this.alimentosToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +221,8 @@
         private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem combosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alimentosToolStripMenuItem;
     }
 }
 
