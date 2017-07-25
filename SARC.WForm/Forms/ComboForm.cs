@@ -19,11 +19,16 @@ namespace SARC.WForm
         
         public ComboForm()
         {
+            //TODO: Show next combo number to create
+            //TODO: Load combos in the table
+            //TODO: Edit Combo
+            //TODO: Delete Combo
+
             InitializeComponent();
             _dbContext = new EFContext();
             foreach (var food in _dbContext.Foods.Where(f=>f.NumberInStock > 0))
             {
-                LbAlimentos.Items.Add(food.Name);
+                LbAlimentos.Items.Add(food);
             }
             
         }
@@ -35,7 +40,19 @@ namespace SARC.WForm
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            SwapItemsList(LbCombos, LbAlimentos);
+        }
 
+        private void SwapItemsList(ListBox from, ListBox to)
+        {
+            Object[] items = new Object[from.SelectedItems.Count];
+            from.SelectedItems.CopyTo(items, 0);
+
+            foreach (var item in items)
+            {
+                to.Items.Add(item);
+                from.Items.Remove(item);
+            }
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
@@ -47,15 +64,22 @@ namespace SARC.WForm
 
         private void BtnAddToCombo_Click(object sender, EventArgs e)
         {
-            //Obtenemos los nombre de los alimentos a agregar
-            var AgregarCombo = LbAlimentos.SelectedItems;
+            SwapItemsList(LbAlimentos, LbCombos);
+        }
 
-            foreach(var itemToCombo in AgregarCombo)
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            //TODO: Validate price is not blank
+            //TODO: Validate price is a numeric value
+            Combo combo = new Combo();
+            combo.Price = Int32.Parse(txtPrice.Text);
+            foreach (Food food in LbCombos.Items)
             {
-                LbCombos.Items.Add(itemToCombo.ToString());
-                LbAlimentos.Items.Remove(itemToCombo.ToString());
+                combo.Foods.Add(food);
             }
-            
+            _dbContext.Combos.Add(combo);
+            _dbContext.SaveChanges();
+            //combo.Foods.Add
         }
     }
 }
