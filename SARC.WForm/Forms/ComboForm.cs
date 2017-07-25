@@ -23,9 +23,9 @@ namespace SARC.WForm
             _dbContext = new EFContext();
             foreach (var food in _dbContext.Foods.Where(f=>f.NumberInStock > 0))
             {
-                _comida.Add(food.Name);
+                LbAlimentos.Items.Add(food.Name);
             }
-            LbAlimentos.DataSource = _comida;
+            
         }
 
         private void ComboForm_Load(object sender, EventArgs e)
@@ -43,6 +43,19 @@ namespace SARC.WForm
             Form1 form = new Form1();
             form.Show();
             this.Hide();
+        }
+
+        private void BtnAddToCombo_Click(object sender, EventArgs e)
+        {
+            //Obtenemos los nombre de los alimentos a agregar
+            var AgregarCombo = LbAlimentos.SelectedItems;
+
+            foreach(var itemToCombo in AgregarCombo)
+            {
+                LbCombos.Items.Add(itemToCombo.ToString());
+                LbAlimentos.Items.Remove(itemToCombo.ToString());
+            }
+            
         }
     }
 }
