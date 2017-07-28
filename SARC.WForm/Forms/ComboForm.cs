@@ -16,6 +16,7 @@ namespace SARC.WForm
     {
         public List<String> _comida = new List<String>();
         private EFContext _dbContext;
+        private Combo CurrentCombo;
         
         public ComboForm()
         {
@@ -30,13 +31,16 @@ namespace SARC.WForm
             {
                 LbAlimentos.Items.Add(food);
             }
-            
+            CurrentCombo = _dbContext.Combos.OrderByDescending(c => c.Id).FirstOrDefault();
+            TxtComboName.Text = (CurrentCombo.Id + 1).ToString();
+            metroGrid1.DataSource = _dbContext.Combos.ToList();
         }
 
         private void ComboForm_Load(object sender, EventArgs e)
         {
             
         }
+
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
@@ -80,6 +84,29 @@ namespace SARC.WForm
             _dbContext.Combos.Add(combo);
             _dbContext.SaveChanges();
             //combo.Foods.Add
+
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void metroButton6_Click(object sender, EventArgs e)
+        {
+            var ComboId = Int32.Parse(metroGrid1.SelectedCells[0].Value.ToString());
+            var Combo = _dbContext.Combos.FirstOrDefault(c => c.Id == ComboId);
+            _dbContext.Combos.Remove(Combo);
+            _dbContext.SaveChanges();
         }
     }
 }
