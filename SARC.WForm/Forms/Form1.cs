@@ -70,6 +70,6 @@ namespace SARC.WForm
             Forms.InventarioForm formulario = new Forms.InventarioForm();
             formulario.MdiParent = this;
             formulario.Show();
-        }
+        }       
     }
 }

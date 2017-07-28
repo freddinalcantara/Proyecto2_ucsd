@@ -182,7 +182,7 @@
             // alimentosToolStripMenuItem
             // 
             this.alimentosToolStripMenuItem.Name = "alimentosToolStripMenuItem";
-            this.alimentosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alimentosToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.alimentosToolStripMenuItem.Text = "Alimentos";
             this.alimentosToolStripMenuItem.Click += new System.EventHandler(this.alimentosToolStripMenuItem_Click);
             // 
@@ -194,10 +194,12 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Resizable = false;
             this.Text = "SARC";
             this.TransparencyKey = System.Drawing.Color.Empty;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

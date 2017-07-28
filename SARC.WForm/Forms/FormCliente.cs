@@ -22,32 +22,44 @@ namespace SARC.WForm
             InitializeComponent();
             _dbContext = new EFContext();
             metroGrid1.DataSource = _dbContext.Clients.ToList();
-        }
-
-        private void FormCliente_Load(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            var Cliente = new Cliente
-            {
-                Id = txtIdentificacion.Text,
+            var cliente = new Cliente
+            {                
+                Cedula = txtIdentificacion.Text,
                 Name = txtNombres.Text,
                 LastName = txtApellidos.Text,
                 PhoneNumber = txtNumeroTelf.Text,
                 Celphone = txtCelular.Text
             };
-            RegistrarPersona(Cliente);
+
+            EditarPersona(cliente);
+
         }
 
         public bool EditarPersona(Cliente cliente)
         {
-            _dbContext.Clients.Attach(cliente);
-            _dbContext.Entry(cliente).State = EntityState.Modified;
+            var clienteToUpdate = _dbContext.Clients.FirstOrDefault(c => c.Cedula == cliente.Cedula);
+            
+            if(clienteToUpdate == null)
+            {
+                _dbContext.Clients.Add(cliente);
+            }
+            else
+            {
+                clienteToUpdate.Cedula = cliente.Cedula;
+                clienteToUpdate.LastName = cliente.LastName;
+                clienteToUpdate.PhoneNumber = cliente.PhoneNumber;
+                clienteToUpdate.Celphone = cliente.Celphone;
+                clienteToUpdate.Name = cliente.Name;
+
+                _dbContext.Entry(clienteToUpdate).State = EntityState.Modified;                
+            }
 
             _dbContext.SaveChanges();
+            metroGrid1.DataSource = _dbContext.Clients.ToList();
 
             return true;
         }
@@ -63,7 +75,7 @@ namespace SARC.WForm
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            var ClientId = metroGrid1.SelectedCells[0].Value.ToString();
+            var ClientId = Int32.Parse(metroGrid1.SelectedCells[0].Value.ToString());
             var Client = _dbContext.Clients.FirstOrDefault(c => c.Id == ClientId);
             _dbContext.Clients.Remove(Client);
             _dbContext.SaveChanges();
@@ -71,9 +83,9 @@ namespace SARC.WForm
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            var ClientId = metroGrid1.SelectedCells[0].Value.ToString();
+            var ClientId = Int32.Parse(metroGrid1.SelectedCells[0].Value.ToString());
             var Client = _dbContext.Clients.FirstOrDefault(c => c.Id == ClientId);
-            txtIdentificacion.Text = Client.Id;
+            txtIdentificacion.Text = Client.Cedula;
             txtNombres.Text = Client.Name;
             txtApellidos.Text = Client.LastName;
             txtNumeroTelf.Text = Client.PhoneNumber;
