@@ -19,5 +19,6 @@ namespace SARC.WForm.Domain.EFRepository
         public DbSet<Bill> Bills { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Stand> Stands { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
     }
 }
