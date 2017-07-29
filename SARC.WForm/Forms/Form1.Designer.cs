@@ -45,6 +45,10 @@
             this.mantenimientoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alimentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,10 +64,12 @@
             this.ordenToolStripMenuItem,
             this.reporteriaToolStripMenuItem,
             this.combosToolStripMenuItem,
-            this.inventarioToolStripMenuItem});
+            this.inventarioToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
+            this.mesasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(759, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(817, 26);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -186,11 +192,41 @@
             this.alimentosToolStripMenuItem.Text = "Alimentos";
             this.alimentosToolStripMenuItem.Click += new System.EventHandler(this.alimentosToolStripMenuItem_Click);
             // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mantenimientoToolStripMenuItem2});
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // mantenimientoToolStripMenuItem2
+            // 
+            this.mantenimientoToolStripMenuItem2.Name = "mantenimientoToolStripMenuItem2";
+            this.mantenimientoToolStripMenuItem2.Size = new System.Drawing.Size(173, 22);
+            this.mantenimientoToolStripMenuItem2.Text = "Mantenimiento";
+            this.mantenimientoToolStripMenuItem2.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem2_Click);
+            // 
+            // mesasToolStripMenuItem
+            // 
+            this.mesasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mantenimientoToolStripMenuItem3});
+            this.mesasToolStripMenuItem.Name = "mesasToolStripMenuItem";
+            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
+            this.mesasToolStripMenuItem.Text = "Mesas";
+            // 
+            // mantenimientoToolStripMenuItem3
+            // 
+            this.mantenimientoToolStripMenuItem3.Name = "mantenimientoToolStripMenuItem3";
+            this.mantenimientoToolStripMenuItem3.Size = new System.Drawing.Size(173, 22);
+            this.mantenimientoToolStripMenuItem3.Text = "Mantenimiento";
+            this.mantenimientoToolStripMenuItem3.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 519);
+            this.ClientSize = new System.Drawing.Size(857, 519);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -225,6 +261,10 @@
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alimentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem mesasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem3;
     }
 }
 

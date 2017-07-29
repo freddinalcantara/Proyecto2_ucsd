@@ -70,6 +70,20 @@ namespace SARC.WForm
             Forms.InventarioForm formulario = new Forms.InventarioForm();
             formulario.MdiParent = this;
             formulario.Show();
-        }       
+        }
+
+        private void mantenimientoToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Forms.FormMantMesas formulario = new Forms.FormMantMesas();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void mantenimientoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Forms.FormMantUsuarios formulario = new Forms.FormMantUsuarios();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
     }
 }
