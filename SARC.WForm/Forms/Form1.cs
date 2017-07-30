@@ -74,7 +74,7 @@ namespace SARC.WForm
 
         private void mantenimientoToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            Forms.FormMantMesas formulario = new Forms.FormMantMesas();
+            Forms.Mesas formulario = new Forms.Mesas();
             formulario.MdiParent = this;
             formulario.Show();
         }

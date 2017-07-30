@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201707290315327_AddingUserClass.Designer.cs">
       <DependentUpon>201707290315327_AddingUserClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707302017096_AddingLocationAndSeatsTotand.cs" />
+    <Compile Include="Migrations\201707302017096_AddingLocationAndSeatsTotand.Designer.cs">
+      <DependentUpon>201707302017096_AddingLocationAndSeatsTotand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMantMesas.resx">
+      <DependentUpon>FormMantMesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventarioForm.resx">
       <DependentUpon>InventarioForm.cs</DependentUpon>
@@ -228,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707290315327_AddingUserClass.resx">
       <DependentUpon>201707290315327_AddingUserClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707302017096_AddingLocationAndSeatsTotand.resx">
+      <DependentUpon>201707302017096_AddingLocationAndSeatsTotand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
