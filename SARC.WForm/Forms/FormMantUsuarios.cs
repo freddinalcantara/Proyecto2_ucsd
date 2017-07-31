@@ -20,6 +20,7 @@ namespace SARC.WForm.Forms
             InitializeComponent();
             _dbContext = new EFContext();
             GridUsuarioSistemas.DataSource = _dbContext.Usuarios.ToList();
+            GridUsuarioSistemas.Columns[0].Visible = false;
 
         }
 
