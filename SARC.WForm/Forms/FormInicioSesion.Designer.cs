@@ -33,6 +33,7 @@
             this.TxtLoginPassword = new MetroFramework.Controls.MetroTextBox();
             this.LblPassword = new MetroFramework.Controls.MetroLabel();
             this.BtnConectarse = new MetroFramework.Controls.MetroButton();
+            this.BtnSalir = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -121,12 +122,24 @@
             this.BtnConectarse.TabIndex = 4;
             this.BtnConectarse.Text = "Conectarse";
             this.BtnConectarse.UseSelectable = true;
+            this.BtnConectarse.Click += new System.EventHandler(this.BtnConectarse_Click);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Location = new System.Drawing.Point(148, 250);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(162, 23);
+            this.BtnSalir.TabIndex = 5;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseSelectable = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // FormInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 357);
+            this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnConectarse);
             this.Controls.Add(this.TxtLoginPassword);
             this.Controls.Add(this.LblPassword);
@@ -146,5 +159,6 @@
         private MetroFramework.Controls.MetroTextBox TxtLoginPassword;
         private MetroFramework.Controls.MetroLabel LblPassword;
         private MetroFramework.Controls.MetroButton BtnConectarse;
+        private MetroFramework.Controls.MetroButton BtnSalir;
     }
 }
