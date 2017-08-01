@@ -17,20 +17,74 @@ namespace SARC.WForm.Forms
         private EFContext _dbContext;
         public InventarioForm()
         {
+            
             InitializeComponent();
+            BtnEditar.Enabled = false;
             _dbContext = new EFContext();
             metroGrid1.DataSource = _dbContext.Foods.ToList();
         }
 
         private void BtnAceptarAlimento_Click(object sender, EventArgs e)
         {
-            var food = new Food()
+            if (ExistsAlimento(TxtNombreAlimento.Text))
             {
-                Name = TxtNombreAlimento.Text,
-                NumberInStock = Int32.Parse(NudCantAlimentos.Value.ToString())
-            };
-            _dbContext.Foods.Add(food);
+                MessageBox.Show(TxtNombreAlimento, "El alimento ya existe");
+
+            }
+            else
+            {
+                var food = new Food()
+                {
+                    Name = TxtNombreAlimento.Text,
+                    NumberInStock = Int32.Parse(NudCantAlimentos.Value.ToString())
+                };
+                _dbContext.Foods.Add(food);
+                _dbContext.SaveChanges();
+                ActualizarListado();
+            }
+        }
+        private bool ExistsAlimento(string alimento)
+        {
+            return _dbContext.Foods.FirstOrDefault(c => c.Name == alimento) != null;
+
+        }
+        private void ActualizarListado()
+        {
+            metroGrid1.DataSource = _dbContext.Foods.ToList();
+        }
+
+        private void ActualizarAlimento(string alimento, int nuevaCantidad)
+        {
+            //TODO: SI SE EDITA EL NOMBRE DEL ALIMENTO EXPLOTA VERIFICAR QUE HAGA EL CAMBIO  TANTO EN EL NOMBRE COMO CANTIDAD
+
+            Food ActualizarAlimento = _dbContext.Foods.FirstOrDefault(c => c.Name == alimento);
+            int ActualenStock = _dbContext.Foods.Where(c => c.Name == alimento).Sum(a => a.NumberInStock) + nuevaCantidad;
+            ActualizarAlimento.NumberInStock = ActualenStock;
+
+            if (ActualizarAlimento == null)
+            {
+                _dbContext.Foods.Add(ActualizarAlimento);
+            }
+            else
+            {
+                _dbContext.Entry(ActualizarAlimento).CurrentValues.SetValues(alimento);
+            }
             _dbContext.SaveChanges();
+            ActualizarListado();
+        }
+        private void metroGrid1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BtnEditar.Enabled = true;
+            BtnAceptarAlimento.Enabled = false;
+            NudCantAlimentos.Value = 0;
+            TxtNombreAlimento.Text = metroGrid1.SelectedCells[1].Value.ToString();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            var alimentos = _dbContext.Foods.Where(a => a.Name == TxtNombreAlimento.Text);
+
+            ActualizarAlimento(TxtNombreAlimento.Text, Convert.ToInt32(NudCantAlimentos.Value));
         }
     }
 }

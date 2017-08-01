@@ -37,8 +37,11 @@ namespace SARC.WForm.Forms
 
         private void ValidacionSesion(string Usuario, string Contrasena)
         {
+            //TODO: EL ROL POR FIRSTORDEFAULT ES 1, HAY QUE ARREGLAR ESO
             bool status = _dbContext.Usuarios.Where(c => c.codigo_usuario == Usuario && c.password == Contrasena).Any(c=>c.estatus);
             var validacion = _dbContext.Usuarios.Count(c=>c.codigo_usuario==Usuario && c.password==Contrasena);
+            Domain.Models.Usuarios todo = _dbContext.Usuarios.Where(c => c.codigo_usuario == Usuario && c.password == Contrasena).FirstOrDefault();
+            int rol = todo.Rol;
             if (status == true)
             {
                 if (validacion == 0)
@@ -49,8 +52,46 @@ namespace SARC.WForm.Forms
                 }
                 else
                 {
-                    this.Hide();
                     Form1 formulario = new Form1();
+
+                    switch (rol)
+                    {
+                        case 0: //cocinero
+                            formulario.MainMenuStrip.Items["reservacionesToolStripMenuItem"].Visible = false; //reservaciones
+                            formulario.MainMenuStrip.Items["clientewsToolStripMenuItem"].Visible = false; //Clientes
+                            formulario.MainMenuStrip.Items["facturasToolStripMenuItem"].Visible = false; // facturas
+                            formulario.MainMenuStrip.Items["reporteriaToolStripMenuItem"].Visible = false; // reporteria
+                            formulario.MainMenuStrip.Items["combosToolStripMenuItem"].Visible = false;// combos
+                            formulario.MainMenuStrip.Items["inventarioToolStripMenuItem"].Visible = false;//inventario
+                            formulario.MainMenuStrip.Items["usuariosToolStripMenuItem"].Visible = false;//Usuarios
+                            formulario.MainMenuStrip.Items["mesasToolStripMenuItem"].Visible = false;//Mesas
+                            break;
+                        case 1: //camarero
+                            //formulario.MainMenuStrip.Items["reservacionesToolStripMenuItem"].Visible = false; //reservaciones
+                            //formulario.MainMenuStrip.Items["clientewsToolStripMenuItem"].Visible = false; //Clientes
+                            //formulario.MainMenuStrip.Items["facturasToolStripMenuItem"].Visible = false; // facturas
+                            //formulario.MainMenuStrip.Items["reporteriaToolStripMenuItem"].Visible = false; // reporteria
+                            //formulario.MainMenuStrip.Items["combosToolStripMenuItem"].Visible = false;// combos
+                            //formulario.MainMenuStrip.Items["inventarioToolStripMenuItem"].Visible = false;//inventario
+                            //formulario.MainMenuStrip.Items["usuariosToolStripMenuItem"].Visible = false;//Usuarios
+                            //formulario.MainMenuStrip.Items["mesasToolStripMenuItem"].Visible = false;//Mesas
+                            break;
+                        case 2://cajero
+                            formulario.MainMenuStrip.Items["reservacionesToolStripMenuItem"].Visible = false; //reservaciones
+                            formulario.MainMenuStrip.Items["clientewsToolStripMenuItem"].Visible = false; //Clientes
+                            formulario.MainMenuStrip.Items["facturasToolStripMenuItem"].Visible = false; // facturas
+                            formulario.MainMenuStrip.Items["reporteriaToolStripMenuItem"].Visible = false; // reporteria
+                            formulario.MainMenuStrip.Items["combosToolStripMenuItem"].Visible = false;// combos
+                            formulario.MainMenuStrip.Items["inventarioToolStripMenuItem"].Visible = false;//inventario
+                            formulario.MainMenuStrip.Items["usuariosToolStripMenuItem"].Visible = false;//Usuarios
+                            formulario.MainMenuStrip.Items["mesasToolStripMenuItem"].Visible = false;//Mesas
+                            break;
+                        case 3://administrador
+
+                            break;
+                    }
+                    this.Hide();
+                    
                     formulario.Show();
                 }
             }

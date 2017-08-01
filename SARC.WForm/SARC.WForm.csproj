@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\EFRepository\EFContext.cs" />
+    <Compile Include="Domain\IGridEventListener.cs" />
     <Compile Include="Domain\Models\Bill.cs" />
     <Compile Include="Domain\Models\Cliente.cs" />
     <Compile Include="Domain\Models\Combo.cs" />
@@ -211,7 +212,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMantUsuarios.resx">
       <DependentUpon>FormMantUsuarios.cs</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMantMesas.resx">
       <DependentUpon>FormMantMesas.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,6 @@
-﻿using SARC.WForm.Domain.EFRepository;
+﻿using SARC.WForm.Domain;
+using SARC.WForm.Domain.EFRepository;
+using SARC.WForm.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,15 +13,15 @@ using System.Windows.Forms;
 
 namespace SARC.WForm.Forms
 {
-    public partial class OrderForm : MetroFramework.Forms.MetroForm
+    public partial class OrderForm : MetroFramework.Forms.MetroForm, IGridEventListener
     {
+        Cliente SelectedClient;
         //inicianlizando variables privadas
         private EFContext _dbContext = new EFContext();
         public OrderForm()
         {
             InitializeComponent();
-            BuscarCliente form = new BuscarCliente();
-            form.Show();
+            
             metroComboBox1.DataSource = _dbContext
                 .Stands
                 .Where(s=>s.Status == true)
@@ -37,7 +39,8 @@ namespace SARC.WForm.Forms
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-
+            BuscarCliente form = new BuscarCliente(this);
+            form.Show();
         }
 
         private void metroLabel6_Click(object sender, EventArgs e)
@@ -51,6 +54,11 @@ namespace SARC.WForm.Forms
             var FoodList = _dbContext.Combos.Where(c => c.Id == comboNumber).FirstOrDefault();
             var query = (from f in _dbContext.Foods where f.Combos.Any(c => c.Id == FoodList.Id) select f.Name).ToList();
             listBox2.DataSource = query;
+        }
+        public void OnRowSelected(object row)
+        {
+            SelectedClient = ((Cliente)row);
+            txtClientName.Text = SelectedClient.FullName;
         }
     }
 }
