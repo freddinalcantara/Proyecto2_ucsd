@@ -37,7 +37,7 @@ namespace SARC.WForm.Forms
 
         private void ValidacionSesion(string Usuario, string Contrasena)
         {
-            //TODO: EL ROL POR FIRSTORDEFAULT ES 1, HAY QUE ARREGLAR ESO
+            //TODO: EL ROL POR FIRSTORDEFAULT ES 1, HAY QUE ARREGLAR ESO: COMPLETED
             bool status = _dbContext.Usuarios.Where(c => c.codigo_usuario == Usuario && c.password == Contrasena).Any(c=>c.estatus);
             var validacion = _dbContext.Usuarios.Count(c=>c.codigo_usuario==Usuario && c.password==Contrasena);
             Domain.Models.Usuarios todo = _dbContext.Usuarios.Where(c => c.codigo_usuario == Usuario && c.password == Contrasena).FirstOrDefault();
@@ -59,7 +59,7 @@ namespace SARC.WForm.Forms
                         case 0: //cocinero
                             formulario.MainMenuStrip.Items["reservacionesToolStripMenuItem"].Visible = false; //reservaciones
                             formulario.MainMenuStrip.Items["clientewsToolStripMenuItem"].Visible = false; //Clientes
-                            formulario.MainMenuStrip.Items["facturasToolStripMenuItem"].Visible = false; // facturas
+                            //formulario.MainMenuStrip.Items["facturasToolStripMenuItem"].Visible = false; // facturas
                             formulario.MainMenuStrip.Items["reporteriaToolStripMenuItem"].Visible = false; // reporteria
                             formulario.MainMenuStrip.Items["combosToolStripMenuItem"].Visible = false;// combos
                             formulario.MainMenuStrip.Items["inventarioToolStripMenuItem"].Visible = false;//inventario
@@ -68,13 +68,14 @@ namespace SARC.WForm.Forms
                             break;
                         case 1: //camarero
                             //formulario.MainMenuStrip.Items["reservacionesToolStripMenuItem"].Visible = false; //reservaciones
-                            //formulario.MainMenuStrip.Items["clientewsToolStripMenuItem"].Visible = false; //Clientes
-                            //formulario.MainMenuStrip.Items["facturasToolStripMenuItem"].Visible = false; // facturas
-                            //formulario.MainMenuStrip.Items["reporteriaToolStripMenuItem"].Visible = false; // reporteria
-                            //formulario.MainMenuStrip.Items["combosToolStripMenuItem"].Visible = false;// combos
-                            //formulario.MainMenuStrip.Items["inventarioToolStripMenuItem"].Visible = false;//inventario
-                            //formulario.MainMenuStrip.Items["usuariosToolStripMenuItem"].Visible = false;//Usuarios
-                            //formulario.MainMenuStrip.Items["mesasToolStripMenuItem"].Visible = false;//Mesas
+                            formulario.MainMenuStrip.Items["clientewsToolStripMenuItem"].Visible = false; //Clientes
+                            formulario.MainMenuStrip.Items["facturasToolStripMenuItem"].Visible = false; // facturas
+                            formulario.MainMenuStrip.Items["reporteriaToolStripMenuItem"].Visible = false; // reporteria
+                            formulario.MainMenuStrip.Items["combosToolStripMenuItem"].Visible = false;// combos
+                            formulario.MainMenuStrip.Items["inventarioToolStripMenuItem"].Visible = false;//inventario
+                            formulario.MainMenuStrip.Items["usuariosToolStripMenuItem"].Visible = false;//Usuarios
+                            formulario.MainMenuStrip.Items["mesasToolStripMenuItem"].Visible = false;//Mesas
+                            formulario.MainMenuStrip.Items["ordenToolStripMenuItem"].Visible = false;//Ordenes
                             break;
                         case 2://cajero
                             formulario.MainMenuStrip.Items["reservacionesToolStripMenuItem"].Visible = false; //reservaciones
@@ -85,9 +86,10 @@ namespace SARC.WForm.Forms
                             formulario.MainMenuStrip.Items["inventarioToolStripMenuItem"].Visible = false;//inventario
                             formulario.MainMenuStrip.Items["usuariosToolStripMenuItem"].Visible = false;//Usuarios
                             formulario.MainMenuStrip.Items["mesasToolStripMenuItem"].Visible = false;//Mesas
+                            //formulario.MainMenuStrip.Items["ordenToolStripMenuItem"].Visible = false;//Ordenes
                             break;
                         case 3://administrador
-
+                            //debe de tener acceso a todos los roles
                             break;
                     }
                     this.Hide();

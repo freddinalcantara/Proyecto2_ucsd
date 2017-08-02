@@ -59,7 +59,9 @@ namespace SARC.WForm.Forms
 
             Food ActualizarAlimento = _dbContext.Foods.FirstOrDefault(c => c.Name == alimento);
             int ActualenStock = _dbContext.Foods.Where(c => c.Name == alimento).Sum(a => a.NumberInStock) + nuevaCantidad;
+            var NombreAliment = TxtNombreAlimento.Text;
             ActualizarAlimento.NumberInStock = ActualenStock;
+            ActualizarAlimento.Name = NombreAliment;
 
             if (ActualizarAlimento == null)
             {
