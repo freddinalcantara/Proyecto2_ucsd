@@ -16,34 +16,43 @@ namespace SARC.WForm
     public partial class FormCliente : MetroFramework.Forms.MetroForm
     {
         private EFContext _dbContext;
-        
+
         public FormCliente()
         {
             InitializeComponent();
             _dbContext = new EFContext();
             metroGrid1.DataSource = _dbContext.Clients.ToList();
-        }        
+        }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            var cliente = new Cliente
-            {                
-                Cedula = txtIdentificacion.Text,
-                Name = txtNombres.Text,
-                LastName = txtApellidos.Text,
-                PhoneNumber = txtNumeroTelf.Text,
-                Celphone = txtCelular.Text
-            };
+            if(txtIdentificacion.Text != "" && txtNombres.Text != "")
+            {
+                var cliente = new Cliente
+                {
+                    Cedula = txtIdentificacion.Text,
+                    Name = txtNombres.Text,
+                    LastName = txtApellidos.Text,
+                    PhoneNumber = txtNumeroTelf.Text,
+                    Celphone = txtCelular.Text
+                };
 
-            EditarPersona(cliente);
+                EditarPersona(cliente);
+            }
+            else
+            {
+                MessageBox.Show("Se necesita almenos un nombre e identificacion");
+                Clean();
+            }
+
 
         }
 
         public bool EditarPersona(Cliente cliente)
         {
             var clienteToUpdate = _dbContext.Clients.FirstOrDefault(c => c.Cedula == cliente.Cedula);
-            
-            if(clienteToUpdate == null)
+
+            if (clienteToUpdate == null)
             {
                 _dbContext.Clients.Add(cliente);
             }
@@ -55,7 +64,7 @@ namespace SARC.WForm
                 clienteToUpdate.Celphone = cliente.Celphone;
                 clienteToUpdate.Name = cliente.Name;
 
-                _dbContext.Entry(clienteToUpdate).State = EntityState.Modified;                
+                _dbContext.Entry(clienteToUpdate).State = EntityState.Modified;
             }
 
             _dbContext.SaveChanges();
@@ -79,6 +88,7 @@ namespace SARC.WForm
             var Client = _dbContext.Clients.FirstOrDefault(c => c.Id == ClientId);
             _dbContext.Clients.Remove(Client);
             _dbContext.SaveChanges();
+            metroGrid1.DataSource = _dbContext.Clients.ToList();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -90,6 +100,46 @@ namespace SARC.WForm
             txtApellidos.Text = Client.LastName;
             txtNumeroTelf.Text = Client.PhoneNumber;
             txtCelular.Text = Client.Celphone;
+        }
+
+        //Metodo para no permitir numeros en un textbox
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show("Favor digite un caracter correcto");
+                e.Handled = true;
+            }
+        }
+
+        private void txtIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                MessageBox.Show("Favor digite un caracter correcto");
+                e.Handled = true;
+            }
+        }
+
+        public void Clean()
+        {
+            txtNombres.Text = "";
+            txtApellidos.Text = "";
+            txtIdentificacion.Text = "";
+            txtNumeroTelf.Text = "";
+            txtCelular.Text = "";
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Clean();
+        }
+
+        private void metroTextBox6_KeyUp(object sender, KeyEventArgs e)
+        {
+            string clientName = metroTextBox6.Text;
+            metroGrid1.DataSource = _dbContext
+                .Clients.Where(c => c.Name.Contains(clientName) || c.Cedula.Contains(clientName)).ToList();
         }
     }
 }
