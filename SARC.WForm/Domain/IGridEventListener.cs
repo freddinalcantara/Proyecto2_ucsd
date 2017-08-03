@@ -9,5 +9,6 @@ namespace SARC.WForm.Domain
     public interface IGridEventListener
     {
         void OnRowSelected(Object row);
+        void OnRowSelectedExtraFood(Object row);
     }
 }

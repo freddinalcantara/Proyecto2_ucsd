@@ -99,6 +99,12 @@
     <Compile Include="Forms\ComboForm.Designer.cs">
       <DependentUpon>ComboForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExtraFoodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExtraFoodForm.Designer.cs">
+      <DependentUpon>ExtraFoodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,10 @@
     <Compile Include="Migrations\201707302017096_AddingLocationAndSeatsTotand.Designer.cs">
       <DependentUpon>201707302017096_AddingLocationAndSeatsTotand.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708030307469_AddingPricetoFood.cs" />
+    <Compile Include="Migrations\201708030307469_AddingPricetoFood.Designer.cs">
+      <DependentUpon>201708030307469_AddingPricetoFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ComboForm.resx">
       <DependentUpon>ComboForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExtraFoodForm.resx">
+      <DependentUpon>ExtraFoodForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
@@ -251,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707302017096_AddingLocationAndSeatsTotand.resx">
       <DependentUpon>201707302017096_AddingLocationAndSeatsTotand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708030307469_AddingPricetoFood.resx">
+      <DependentUpon>201708030307469_AddingPricetoFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
