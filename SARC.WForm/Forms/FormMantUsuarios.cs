@@ -28,7 +28,7 @@ namespace SARC.WForm.Forms
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            bool hola = Convert.ToBoolean(CbEstado.SelectedValue);
+            var estatus = CbEstado.SelectedIndex;
             //Verifica si el usuario existe llamando al methodo ExisteUsuario y se le pasa el valor 
             //del textbox a donde se introduce el usuario como valor
             if (ExisteUsuario(TxtNombreUsuario.Text))
@@ -47,10 +47,9 @@ namespace SARC.WForm.Forms
             {
                     var Usuario = new Usuarios
                     {
-
                         codigo_usuario = TxtNombreUsuario.Text,
                         password = TxtContrasena.Text,
-                        estatus = hola,
+                        estatus = Convert.ToBoolean(estatus),
                         Rol = CbRolUsuario.SelectedIndex,
                         Fecha_creacion = DateTime.Today
                     };
@@ -70,6 +69,11 @@ namespace SARC.WForm.Forms
 
         }
 
+        private void ActualizarListadoUsuario()
+        {
+            GridUsuarioSistemas.DataSource = _dbContext.Usuarios.ToList();
+
+        }
         //Este metodo trae los valores seleccionados del grid a los textbox
         private void GridUsuarioSistemas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -81,11 +85,6 @@ namespace SARC.WForm.Forms
             TxtContrasena.Text = GridUsuarioSistemas.SelectedCells[2].Value.ToString();
         }
         
-        private void ActualizarUsuario(string usuario)
-        {
-            Usuarios ActualizarUsuario = _dbContext.Usuarios.FirstOrDefault(c => c.codigo_usuario == usuario);
-
-        }
         //para que el combobox no acepte ningun valor
         private void CbRolUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -95,6 +94,15 @@ namespace SARC.WForm.Forms
         private void CbEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            //this shit doesnt work either
+            var IDUsuario = Int32.Parse(GridUsuarioSistemas.SelectedCells[0].Value.ToString());
+            var usuario = _dbContext.Usuarios.FirstOrDefault(c => c.ID == IDUsuario);
+            
+            
         }
     }
 }
