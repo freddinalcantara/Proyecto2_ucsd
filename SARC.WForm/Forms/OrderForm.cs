@@ -68,6 +68,7 @@ namespace SARC.WForm.Forms
             DataGridViewRow newRow = (DataGridViewRow)metroGrid1.Rows[0].Clone();
             newRow.Cells[0].Value = 1;
             newRow.Cells[1].Value = SelectedFood.Name;
+            newRow.Cells[2].Value = SelectedFood.Price;
             metroGrid1.Rows.Add(newRow);
             metroGrid1.Refresh();
         }
