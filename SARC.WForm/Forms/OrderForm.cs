@@ -17,6 +17,10 @@ namespace SARC.WForm.Forms
     {
         Cliente SelectedClient;
         Food SelectedFood;
+        Order Orden;
+        List<Food> ExtraFood;
+        Combo ExtraComboItem;
+        decimal ITBIS;
         //inicianlizando variables privadas
         private EFContext _dbContext = new EFContext();
         public OrderForm()
@@ -34,7 +38,8 @@ namespace SARC.WForm.Forms
                     .Select(c=>c.Id)
                     .ToList();
             //llenamos la lista de comidas que son extra
-            
+            Orden = new Order();
+            Orden.TipoOrden = "Aqui";
             
         }
 
@@ -71,6 +76,8 @@ namespace SARC.WForm.Forms
             newRow.Cells[2].Value = SelectedFood.Price;
             metroGrid1.Rows.Add(newRow);
             metroGrid1.Refresh();
+
+
         }
 
         private void metroRadioButton1_CheckedChanged(object sender, EventArgs e)
@@ -79,7 +86,9 @@ namespace SARC.WForm.Forms
             {
                 metroComboBox1.Show();
                 metroLabel2.Show();
-               
+                Orden.TipoOrden = "Llevar";
+
+
             }
         }
 
@@ -89,7 +98,7 @@ namespace SARC.WForm.Forms
             {
                 metroComboBox1.Hide();
                 metroLabel2.Hide();
-
+                Orden.TipoOrden = "Aqui";
             }
         }
 
@@ -98,6 +107,51 @@ namespace SARC.WForm.Forms
             ExtraFoodForm form = new ExtraFoodForm(this);
             form.Show();
            
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            var ComboSelectedId = Int32.Parse(listBox1.SelectedItem.ToString());
+            var Combo = _dbContext.Combos.FirstOrDefault(c => c.Id == ComboSelectedId);
+            DataGridViewRow newRow = (DataGridViewRow)metroGrid1.Rows[0].Clone();
+            newRow.Cells[0].Value = 1;
+            newRow.Cells[1].Value = string.Format("Combo #{0}",Combo.Id);
+            newRow.Cells[2].Value = Combo.Price;
+            metroGrid1.Rows.Add(newRow);
+            metroGrid1.Refresh();
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            decimal Total = 0;
+             var example  = metroGrid1.Rows
+                       .OfType<DataGridViewRow>()
+                       .Where(x => x.Cells[2].Value != null)
+                       .Select(x => x.Cells[2].Value)
+                       .ToList();
+            foreach (decimal price in example)
+            {
+                Total += price;
+            }
+            ITBIS = Total * 0.18M;
+            txtSubTotal.Text = string.Format("{0:0.00}", Total);
+            Total = Total + ITBIS;
+            txtTotal.Text = string.Format("{0:0.00}", Total);
+
+            Orden.Cliente = SelectedClient;
+            if(Orden.TipoOrden == "Aqui")
+            {
+                int standId = Int32.Parse(metroComboBox1.SelectedItem.ToString());
+                Orden.Stand = _dbContext.Stands.First(s=>s.Id==standId);
+                
+            }
+            var CombosList = metroGrid1.Rows
+                       .OfType<DataGridViewRow>()
+                       .Where(x => x.Cells[1].Value != null)
+                       .Select(x => x.Cells[1].Value.ToString())
+                       .ToList();
+
         }
     }
 }
