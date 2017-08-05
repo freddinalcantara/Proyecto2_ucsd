@@ -61,5 +61,10 @@ namespace SARC.WForm.Forms
         {
             RefreshTable();
         }
+
+        private void BuscarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

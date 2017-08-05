@@ -153,5 +153,10 @@ namespace SARC.WForm.Forms
                        .ToList();
 
         }
+
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

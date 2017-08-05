@@ -40,12 +40,13 @@ namespace SARC.WForm.Forms
             //TODO: EL ROL POR FIRSTORDEFAULT ES 1, HAY QUE ARREGLAR ESO: COMPLETED
             bool status = _dbContext.Usuarios.Where(c => c.codigo_usuario == Usuario && c.password == Contrasena).Any(c=>c.estatus);
             var validacion = _dbContext.Usuarios.Count(c=>c.codigo_usuario==Usuario && c.password==Contrasena);
-            Domain.Models.Usuarios todo = _dbContext.Usuarios.Where(c => c.codigo_usuario == Usuario && c.password == Contrasena).FirstOrDefault();
-            int rol = todo.Rol;
+
             if (status == true)
             {
                 if (validacion == 0)
                 {
+                    Domain.Models.Usuarios todo = _dbContext.Usuarios.Where(c => c.codigo_usuario == Usuario && c.password == Contrasena).FirstOrDefault();
+                    int rol = todo.Rol;
                     MessageBox.Show("Usuario o contrasena incorrectos");
                     TxtLoginUsuario.Clear();
                     TxtLoginPassword.Clear();
@@ -53,7 +54,8 @@ namespace SARC.WForm.Forms
                 else
                 {
                     Form1 formulario = new Form1();
-
+                    Domain.Models.Usuarios todo = _dbContext.Usuarios.Where(c => c.codigo_usuario == Usuario && c.password == Contrasena).FirstOrDefault();
+                    int rol = todo.Rol;
                     switch (rol)
                     {
                         case 0: //cocinero

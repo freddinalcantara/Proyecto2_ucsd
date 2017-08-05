@@ -83,6 +83,7 @@
     <Compile Include="Domain\Models\Cliente.cs" />
     <Compile Include="Domain\Models\Combo.cs" />
     <Compile Include="Domain\Models\Food.cs" />
+    <Compile Include="Domain\Models\OrdenDetail.cs" />
     <Compile Include="Domain\Models\Order.cs" />
     <Compile Include="Domain\Models\Reservation.cs" />
     <Compile Include="Domain\Models\Stand.cs" />
@@ -199,6 +200,14 @@
     <Compile Include="Migrations\201708030307469_AddingPricetoFood.Designer.cs">
       <DependentUpon>201708030307469_AddingPricetoFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708050006210_AddingMissingFields.cs" />
+    <Compile Include="Migrations\201708050006210_AddingMissingFields.Designer.cs">
+      <DependentUpon>201708050006210_AddingMissingFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708050054561_RemovingReservationStand.cs" />
+    <Compile Include="Migrations\201708050054561_RemovingReservationStand.Designer.cs">
+      <DependentUpon>201708050054561_RemovingReservationStand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -267,6 +276,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708030307469_AddingPricetoFood.resx">
       <DependentUpon>201708030307469_AddingPricetoFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708050006210_AddingMissingFields.resx">
+      <DependentUpon>201708050006210_AddingMissingFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708050054561_RemovingReservationStand.resx">
+      <DependentUpon>201708050054561_RemovingReservationStand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
