@@ -15,12 +15,12 @@ using System.Windows.Forms;
 namespace SARC.WForm
 {
     public partial class ReservationForm : MetroFramework.Forms.MetroForm
-        {
+    {
 
         private EFContext _dbContext;
 
         public ReservationForm()
-        { 
+        {
             InitializeComponent();
             _dbContext = new EFContext();
         }
@@ -37,7 +37,7 @@ namespace SARC.WForm
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void dgvStands_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,8 +48,8 @@ namespace SARC.WForm
         private void metroButton2_Click(object sender, EventArgs e)
         {
             var Stands = _dbContext.Stands.Where(s => s.Status == true);
-            foreach (var Stand in  Stands)
-            
+            foreach (var Stand in Stands)
+
             {
                 Reservation reservation = ReservationForStand(Stand, dtpReservationDate.Value);
                 DataGridViewRow newRow = (DataGridViewRow)dgvStands.Rows[0].Clone();
@@ -65,14 +65,31 @@ namespace SARC.WForm
 
         private Reservation ReservationForStand(Stand stand, DateTime reservationDate)
         {
-            var reservation = _dbContext.Reservations.Where(r => r.Stand.Id == stand.Id
-                                          && r.Status == "PENDIENTE"
-                                          && DbFunctions.CreateDateTime(r.ReservationDate.Year, r.ReservationDate.Date.Month, r.ReservationDate.Day, 0, 0, 0) == reservationDate.Date
-                                           ).FirstOrDefault();
-                                          //&& r--eservationDate.Hour > r.ReservationDate.Hour).FirstOrDefault();
+            //var reservation = _dbContext.Reservations.Where(r => r.Stand.Id == stand.Id
+            //                              && r.Status == "PENDIENTE"
+            //                              && DbFunctions.CreateDateTime(r.ReservationDate.Year, r.ReservationDate.Date.Month, r.ReservationDate.Day, 0, 0, 0) == reservationDate.Date
+            //                               ).FirstOrDefault();
+            //                              //&& r--eservationDate.Hour > r.ReservationDate.Hour).FirstOrDefault();
+            
+              var reservation =   _dbContext.Reservations.Where(r => r.Stand.Id == stand.Id
+            && DbFunctions.CreateDateTime(r.ReservationDate.Year, r.ReservationDate.Month, r.ReservationDate.Day, r.ReservationDate.Hour, r.ReservationDate.Minute, r.ReservationDate.Second) <= reservationDate.Date).FirstOrDefault();
 
             return reservation;
 
+        }
+
+        private void dgvStands_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //MessageBox.Show(string.Format("{0}::{1}::{2}", e.ColumnIndex,dgvStands.Columns[5].Index,e.RowIndex));
+            //ignore all clicks that are not in our button
+            if (e.ColumnIndex == dgvStands.Columns[5].Index)
+            {
+                //MessageBox.Show(string.Format("{0}",dgvStands.Rows[e.RowIndex].));
+
+                //var StandNumber = dgvStands.Rows[e.RowIndex].Cells[0].Value;
+
+
+            }
         }
     }
 }

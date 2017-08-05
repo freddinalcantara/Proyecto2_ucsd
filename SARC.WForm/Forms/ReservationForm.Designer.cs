@@ -40,13 +40,13 @@
             this.dgvStandsToReserve = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvStands = new System.Windows.Forms.DataGridView();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.clmStand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmChairs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmReservationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAddStand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandsToReserve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStands)).BeginInit();
@@ -111,7 +111,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(23, 115);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(116, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(117, 19);
             this.metroLabel2.TabIndex = 16;
             this.metroLabel2.Text = "Fecha Reservacion";
             // 
@@ -163,9 +163,9 @@
             // dgvStandsToReserve
             // 
             this.dgvStandsToReserve.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStandsToReserve.Location = new System.Drawing.Point(23, 363);
+            this.dgvStandsToReserve.Location = new System.Drawing.Point(26, 330);
             this.dgvStandsToReserve.Name = "dgvStandsToReserve";
-            this.dgvStandsToReserve.Size = new System.Drawing.Size(498, 102);
+            this.dgvStandsToReserve.Size = new System.Drawing.Size(647, 131);
             this.dgvStandsToReserve.TabIndex = 25;
             // 
             // textBox1
@@ -186,21 +186,12 @@
             this.clmStatus,
             this.clmReservationDate,
             this.clmAddStand});
-            this.dgvStands.Location = new System.Drawing.Point(26, 251);
+            this.dgvStands.Location = new System.Drawing.Point(25, 178);
             this.dgvStands.Name = "dgvStands";
-            this.dgvStands.Size = new System.Drawing.Size(648, 99);
+            this.dgvStands.Size = new System.Drawing.Size(648, 146);
             this.dgvStands.TabIndex = 27;
+            this.dgvStands.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStands_CellClick);
             this.dgvStands.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStands_CellContentClick);
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(23, 183);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(133, 23);
-            this.metroButton2.TabIndex = 28;
-            this.metroButton2.Text = "metroButton2";
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // clmStand
             // 
@@ -233,6 +224,16 @@
             this.clmAddStand.Name = "clmAddStand";
             this.clmAddStand.Text = "Agregar";
             this.clmAddStand.UseColumnTextForButtonValue = true;
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(23, 149);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(133, 23);
+            this.metroButton2.TabIndex = 28;
+            this.metroButton2.Text = "metroButton2";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // ReservationForm
             // 
