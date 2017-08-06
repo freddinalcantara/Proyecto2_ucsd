@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SARC.WForm.Domain.EFRepository;
 using SARC.WForm.Domain.Models;
 using SARC.WForm.Domain;
+using System.Data.Entity;
 
 namespace SARC.WForm.Forms
 {
@@ -43,9 +44,12 @@ namespace SARC.WForm.Forms
         {
             int ID = int.Parse(dGridClientes.SelectedCells[0].Value.ToString());
             Cliente cliente = _dbContext.Clients.Where(c => c.Id == ID).First();
+           
             if (gridEventListener != null)
             {
+               // _dbContext.Entry(cliente).State = EntityState.Detached;
                 gridEventListener.OnRowSelected(cliente);
+               // _dbContext.Dispose();
             }
             this.Hide();
         }

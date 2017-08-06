@@ -9,7 +9,7 @@ namespace SARC.WForm.Domain.Models
     public class Reservation
     {
         public int Id { get; set; }
-        public Cliente Client { get; set; }
+        public virtual Cliente Client { get; set; }
         public int Chairs { get; set; }
         public string Details { get; set; }
         public DateTime ReservationDate { get; set; }
