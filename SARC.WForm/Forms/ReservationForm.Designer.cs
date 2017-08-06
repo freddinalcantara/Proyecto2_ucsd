@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.txtDetalle = new MetroFramework.Controls.MetroTextBox();
+            this.btnReservar = new MetroFramework.Controls.MetroButton();
             this.dtpReservationDate = new System.Windows.Forms.DateTimePicker();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudSillas = new System.Windows.Forms.NumericUpDown();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.BtnBuscarCliente = new MetroFramework.Controls.MetroButton();
             this.dgvStandsToReserve = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.clmMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSillas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.dgvStands = new System.Windows.Forms.DataGridView();
             this.clmStand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,53 +51,54 @@
             this.clmReservationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAddStand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSillas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandsToReserve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStands)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroTextBox1
+            // txtDetalle
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(315, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(63, 63);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[] {
+            this.txtDetalle.CustomButton.Image = null;
+            this.txtDetalle.CustomButton.Location = new System.Drawing.Point(315, 1);
+            this.txtDetalle.CustomButton.Name = "";
+            this.txtDetalle.CustomButton.Size = new System.Drawing.Size(63, 63);
+            this.txtDetalle.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDetalle.CustomButton.TabIndex = 1;
+            this.txtDetalle.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDetalle.CustomButton.UseSelectable = true;
+            this.txtDetalle.CustomButton.Visible = false;
+            this.txtDetalle.Lines = new string[] {
         "Detalle..."};
-            this.metroTextBox1.Location = new System.Drawing.Point(145, 532);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Multiline = true;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(379, 65);
-            this.metroTextBox1.TabIndex = 10;
-            this.metroTextBox1.Text = "Detalle...";
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDetalle.Location = new System.Drawing.Point(145, 532);
+            this.txtDetalle.MaxLength = 32767;
+            this.txtDetalle.Multiline = true;
+            this.txtDetalle.Name = "txtDetalle";
+            this.txtDetalle.PasswordChar = '\0';
+            this.txtDetalle.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDetalle.SelectedText = "";
+            this.txtDetalle.SelectionLength = 0;
+            this.txtDetalle.SelectionStart = 0;
+            this.txtDetalle.ShortcutsEnabled = true;
+            this.txtDetalle.Size = new System.Drawing.Size(379, 65);
+            this.txtDetalle.TabIndex = 10;
+            this.txtDetalle.Text = "Detalle...";
+            this.txtDetalle.UseSelectable = true;
+            this.txtDetalle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDetalle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroButton1
+            // btnReservar
             // 
-            this.metroButton1.Location = new System.Drawing.Point(24, 603);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(500, 36);
-            this.metroButton1.TabIndex = 11;
-            this.metroButton1.Text = "Reservar";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton1.UseSelectable = true;
+            this.btnReservar.Location = new System.Drawing.Point(24, 603);
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Size = new System.Drawing.Size(500, 36);
+            this.btnReservar.TabIndex = 11;
+            this.btnReservar.Text = "Reservar";
+            this.btnReservar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnReservar.UseSelectable = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // dtpReservationDate
             // 
@@ -134,12 +139,12 @@
             this.metroTile5.Text = "Mesas";
             this.metroTile5.UseSelectable = true;
             // 
-            // numericUpDown1
+            // nudSillas
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(146, 467);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(41, 20);
-            this.numericUpDown1.TabIndex = 22;
+            this.nudSillas.Location = new System.Drawing.Point(146, 467);
+            this.nudSillas.Name = "nudSillas";
+            this.nudSillas.Size = new System.Drawing.Size(41, 20);
+            this.nudSillas.TabIndex = 22;
             // 
             // metroLabel5
             // 
@@ -163,17 +168,44 @@
             // dgvStandsToReserve
             // 
             this.dgvStandsToReserve.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStandsToReserve.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmMesa,
+            this.clmUbicacion,
+            this.clmSillas,
+            this.Eliminar});
             this.dgvStandsToReserve.Location = new System.Drawing.Point(26, 330);
             this.dgvStandsToReserve.Name = "dgvStandsToReserve";
             this.dgvStandsToReserve.Size = new System.Drawing.Size(647, 131);
             this.dgvStandsToReserve.TabIndex = 25;
             // 
-            // textBox1
+            // clmMesa
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 502);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 20);
-            this.textBox1.TabIndex = 26;
+            this.clmMesa.HeaderText = "Mesa #";
+            this.clmMesa.Name = "clmMesa";
+            // 
+            // clmUbicacion
+            // 
+            this.clmUbicacion.HeaderText = "Ubicacion";
+            this.clmUbicacion.Name = "clmUbicacion";
+            // 
+            // clmSillas
+            // 
+            this.clmSillas.HeaderText = "Cantidad Sillas";
+            this.clmSillas.Name = "clmSillas";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Text = "Eliminar";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(144, 502);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(281, 20);
+            this.txtCliente.TabIndex = 26;
             // 
             // dgvStands
             // 
@@ -242,22 +274,22 @@
             this.ClientSize = new System.Drawing.Size(697, 681);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.dgvStands);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.dgvStandsToReserve);
             this.Controls.Add(this.BtnBuscarCliente);
             this.Controls.Add(this.metroLabel5);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudSillas);
             this.Controls.Add(this.metroTile5);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.dtpReservationDate);
-            this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.btnReservar);
+            this.Controls.Add(this.txtDetalle);
             this.Name = "ReservationForm";
             this.Resizable = false;
             this.Text = "Reservacion";
             this.Load += new System.EventHandler(this.ReservationForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSillas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandsToReserve)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStands)).EndInit();
             this.ResumeLayout(false);
@@ -266,17 +298,17 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroTextBox txtDetalle;
+        private MetroFramework.Controls.MetroButton btnReservar;
         private System.Windows.Forms.DateTimePicker dtpReservationDate;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTile metroTile5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudSillas;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroButton BtnBuscarCliente;
         private System.Windows.Forms.DataGridView dgvStandsToReserve;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.DataGridView dgvStands;
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmStand;
@@ -285,5 +317,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmReservationDate;
         private System.Windows.Forms.DataGridViewButtonColumn clmAddStand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMesa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmUbicacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSillas;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }
