@@ -21,6 +21,7 @@ namespace SARC.WForm.Forms
         List<Food> ExtraFood;
         Combo ExtraComboItem;
         decimal ITBIS;
+        List<OrdenDetail> DetalleOrden;
         //inicianlizando variables privadas
         private EFContext _dbContext = new EFContext();
         public OrderForm()
@@ -40,7 +41,9 @@ namespace SARC.WForm.Forms
             //llenamos la lista de comidas que son extra
             Orden = new Order();
             Orden.TipoOrden = "Aqui";
-            
+            DetalleOrden = new List<OrdenDetail>();
+
+
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -114,16 +117,18 @@ namespace SARC.WForm.Forms
             var ComboSelectedId = Int32.Parse(listBox1.SelectedItem.ToString());
             var Combo = _dbContext.Combos.FirstOrDefault(c => c.Id == ComboSelectedId);
             DataGridViewRow newRow = (DataGridViewRow)metroGrid1.Rows[0].Clone();
+            //DataGridViewRow newRow = new DataGridViewRow();
             newRow.Cells[0].Value = 1;
             newRow.Cells[1].Value = string.Format("Combo #{0}",Combo.Id);
             newRow.Cells[2].Value = Combo.Price;
             metroGrid1.Rows.Add(newRow);
-            metroGrid1.Refresh();
+            //metroGrid1.Refresh();
 
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
+
             decimal Total = 0;
              var example  = metroGrid1.Rows
                        .OfType<DataGridViewRow>()
@@ -139,8 +144,8 @@ namespace SARC.WForm.Forms
             Total = Total + ITBIS;
             txtTotal.Text = string.Format("{0:0.00}", Total);
 
-            Orden.Cliente = SelectedClient;
-            if(Orden.TipoOrden == "Aqui")
+            Orden.Cliente = _dbContext.Clients.FirstOrDefault(c => c.Cedula == SelectedClient.Cedula);
+            if (Orden.TipoOrden == "Aqui")
             {
                 int standId = Int32.Parse(metroComboBox1.SelectedItem.ToString());
                 Orden.Stand = _dbContext.Stands.First(s=>s.Id==standId);
@@ -152,6 +157,20 @@ namespace SARC.WForm.Forms
                        .Select(x => x.Cells[1].Value.ToString())
                        .ToList();
 
+
+            for (int i = 0; i < metroGrid1.RowCount-1; i++)
+            {
+                OrdenDetail ordenDetail = new OrdenDetail
+                {
+                    Item = metroGrid1.Rows[i].Cells[1].Value.ToString(),
+                    ItemPrice = decimal.Parse(metroGrid1.Rows[i].Cells[2].Value.ToString()),
+                };
+                DetalleOrden.Add(ordenDetail);
+            }
+            Orden.OrderDetails = DetalleOrden;
+            Orden.CreatedAt = DateTime.Now;
+
+
         }
 
         private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -161,7 +180,9 @@ namespace SARC.WForm.Forms
 
         private void BtnProcesarFactura_Click(object sender, EventArgs e)
         {
-
+            _dbContext.Orders.Add(Orden);
+            _dbContext.SaveChanges();
+            MessageBox.Show("Orden facturada");
         }
     }
 }

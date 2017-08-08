@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace SARC.WForm.Domain.Models
 {
     public class Combo
     {
+        
         public int Id { get; set; }
         public decimal Price { get; set; }
         public virtual ICollection<Food> Foods { get; set; }
