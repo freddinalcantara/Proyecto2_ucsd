@@ -38,6 +38,10 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.BtnBuscarCliente = new MetroFramework.Controls.MetroButton();
             this.dgvStandsToReserve = new System.Windows.Forms.DataGridView();
+            this.clmMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSillas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.dgvStands = new System.Windows.Forms.DataGridView();
             this.clmStand = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,10 +52,6 @@
             this.clmAddStand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBuscarMesas = new MetroFramework.Controls.MetroButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.clmMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmUbicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSillas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudSillas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandsToReserve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStands)).BeginInit();
@@ -71,8 +71,7 @@
             this.txtDetalle.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtDetalle.CustomButton.UseSelectable = true;
             this.txtDetalle.CustomButton.Visible = false;
-            this.txtDetalle.Lines = new string[] {
-        "Detalle..."};
+            this.txtDetalle.Lines = new string[0];
             this.txtDetalle.Location = new System.Drawing.Point(143, 617);
             this.txtDetalle.MaxLength = 32767;
             this.txtDetalle.Multiline = true;
@@ -85,7 +84,6 @@
             this.txtDetalle.ShortcutsEnabled = true;
             this.txtDetalle.Size = new System.Drawing.Size(379, 65);
             this.txtDetalle.TabIndex = 10;
-            this.txtDetalle.Text = "Detalle...";
             this.txtDetalle.UseSelectable = true;
             this.txtDetalle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDetalle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -185,6 +183,32 @@
             this.dgvStandsToReserve.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStandsToReserve_CellClick);
             this.dgvStandsToReserve.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStandsToReserve_CellContentClick);
             // 
+            // clmMesa
+            // 
+            this.clmMesa.HeaderText = "Mesa #";
+            this.clmMesa.Name = "clmMesa";
+            this.clmMesa.ReadOnly = true;
+            // 
+            // clmUbicacion
+            // 
+            this.clmUbicacion.HeaderText = "Ubicacion";
+            this.clmUbicacion.Name = "clmUbicacion";
+            this.clmUbicacion.ReadOnly = true;
+            // 
+            // clmSillas
+            // 
+            this.clmSillas.HeaderText = "Cantidad Sillas";
+            this.clmSillas.Name = "clmSillas";
+            this.clmSillas.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            // 
             // txtCliente
             // 
             this.txtCliente.Location = new System.Drawing.Point(142, 587);
@@ -270,32 +294,6 @@
             this.label2.Size = new System.Drawing.Size(176, 24);
             this.label2.TabIndex = 30;
             this.label2.Text = "Mesas a Reservar";
-            // 
-            // clmMesa
-            // 
-            this.clmMesa.HeaderText = "Mesa #";
-            this.clmMesa.Name = "clmMesa";
-            this.clmMesa.ReadOnly = true;
-            // 
-            // clmUbicacion
-            // 
-            this.clmUbicacion.HeaderText = "Ubicacion";
-            this.clmUbicacion.Name = "clmUbicacion";
-            this.clmUbicacion.ReadOnly = true;
-            // 
-            // clmSillas
-            // 
-            this.clmSillas.HeaderText = "Cantidad Sillas";
-            this.clmSillas.Name = "clmSillas";
-            this.clmSillas.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // ReservationForm
             // 

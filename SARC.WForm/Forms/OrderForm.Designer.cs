@@ -414,7 +414,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(266, 627);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(38, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(36, 19);
             this.metroLabel6.TabIndex = 19;
             this.metroLabel6.Text = "Total";
             this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
@@ -484,6 +484,7 @@
             this.BtnProcesarFactura.TabIndex = 25;
             this.BtnProcesarFactura.Text = "Procesar Factura";
             this.BtnProcesarFactura.UseSelectable = true;
+            this.BtnProcesarFactura.Click += new System.EventHandler(this.BtnProcesarFactura_Click);
             // 
             // OrderForm
             // 

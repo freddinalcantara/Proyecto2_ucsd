@@ -158,5 +158,10 @@ namespace SARC.WForm.Forms
         {
 
         }
+
+        private void BtnProcesarFactura_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

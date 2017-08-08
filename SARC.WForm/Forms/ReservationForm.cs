@@ -219,17 +219,28 @@ namespace SARC.WForm
                 ReservacionFinal.Status = StandStatus.RESERVADA;
                 ReservacionFinal.Stand = stand;
                 ReservacionFinal.CreatedAt = DateTime.Now;
-
-                 SelectedClient.Reservations.Add(ReservacionFinal);
+                ReservacionFinal.Client = _dbContext.Clients.FirstOrDefault(c => c.Cedula == SelectedClient.Cedula);
+                //SelectedClient.Reservations.Add(ReservacionFinal);
+                _dbContext.Reservations.Add(ReservacionFinal);
             
             }
             //_dbContext.Clients.Attach(SelectedClient);
-            _dbContext.Entry(SelectedClient).State = EntityState.Modified;
+            //_dbContext.Entry(SelectedClient).State = EntityState.Modified;
 
             _dbContext.SaveChanges();
+            LimpiarPantalla();
        
+            
 
+        }
 
+        private void LimpiarPantalla()
+        {
+            dgvStands.Rows.Clear();
+            dgvStandsToReserve.Rows.Clear();
+            nudSillas.Value = 0;
+            txtCliente.Clear();
+            txtDetalle.Clear();
         }
 
         private void dtpReservationDate_ValueChanged(object sender, EventArgs e)

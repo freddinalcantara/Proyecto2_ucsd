@@ -32,7 +32,7 @@ namespace SARC.WForm
                 LbAlimentos.Items.Add(food);
             }
             CurrentCombo = _dbContext.Combos.OrderByDescending(c => c.Id).FirstOrDefault();
-            TxtComboName.Text = (CurrentCombo.Id + 1).ToString();
+            //TxtComboName.Text = (CurrentCombo.Id + 1).ToString();
             metroGrid1.DataSource = _dbContext.Combos.ToList();
         }
 
