@@ -9,6 +9,8 @@ namespace SARC.WForm.Domain.Models
         public int NumberInStock { get; set; }
         public decimal Price { get; set; }
 
+        public decimal PriceImport { get; set; }
+
         public virtual ICollection<Combo> Combos { get; set; }
         public Food()
         {

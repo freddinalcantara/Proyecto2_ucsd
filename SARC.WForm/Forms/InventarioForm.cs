@@ -36,7 +36,9 @@ namespace SARC.WForm.Forms
                 var food = new Food()
                 {
                     Name = TxtNombreAlimento.Text,
-                    NumberInStock = Int32.Parse(NudCantAlimentos.Value.ToString())
+                    NumberInStock = Int32.Parse(NudCantAlimentos.Value.ToString()),
+                    Price = nupPrecioVenta.Value,
+                    PriceImport = nudPrecioImportacion.Value
                 };
                 _dbContext.Foods.Add(food);
                 _dbContext.SaveChanges();
@@ -62,6 +64,8 @@ namespace SARC.WForm.Forms
             var NombreAliment = TxtNombreAlimento.Text;
             ActualizarAlimento.NumberInStock = ActualenStock;
             ActualizarAlimento.Name = NombreAliment;
+            ActualizarAlimento.Price = nupPrecioVenta.Value;
+            ActualizarAlimento.PriceImport = nudPrecioImportacion.Value;
 
             if (ActualizarAlimento == null)
             {
