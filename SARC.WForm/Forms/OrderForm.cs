@@ -169,6 +169,7 @@ namespace SARC.WForm.Forms
             }
             Orden.OrderDetails = DetalleOrden;
             Orden.CreatedAt = DateTime.Now;
+            Orden.Status = "Proceso";
 
 
         }
