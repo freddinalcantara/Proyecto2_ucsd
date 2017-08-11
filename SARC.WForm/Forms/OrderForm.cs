@@ -172,7 +172,7 @@ namespace SARC.WForm.Forms
                        .ToList();
 
 
-            for (int i = 0; i < metroGrid1.RowCount-1; i++)
+            for (int i = 0; i < metroGrid1.RowCount; i++)
             {
                 OrdenDetail ordenDetail = new OrdenDetail
                 {

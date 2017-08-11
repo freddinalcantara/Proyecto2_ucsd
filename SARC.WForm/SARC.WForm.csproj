@@ -157,6 +157,12 @@
     <Compile Include="Forms\FormMantUsuarios.Designer.cs">
       <DependentUpon>FormMantUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormReporteAlimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReporteAlimentos.Designer.cs">
+      <DependentUpon>FormReporteAlimentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InventarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,18 @@
     </Compile>
     <Compile Include="Forms\OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReporteMensualDeVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReporteMensualDeVentas.Designer.cs">
+      <DependentUpon>ReporteMensualDeVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reporteultimo7Dias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reporteultimo7Dias.Designer.cs">
+      <DependentUpon>Reporteultimo7Dias.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ReservationForm.cs">
       <SubType>Form</SubType>
@@ -261,11 +279,20 @@
     <EmbeddedResource Include="Forms\FormMantMesas.resx">
       <DependentUpon>FormMantMesas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReporteAlimentos.resx">
+      <DependentUpon>FormReporteAlimentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventarioForm.resx">
       <DependentUpon>InventarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReporteMensualDeVentas.resx">
+      <DependentUpon>ReporteMensualDeVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reporteultimo7Dias.resx">
+      <DependentUpon>Reporteultimo7Dias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>

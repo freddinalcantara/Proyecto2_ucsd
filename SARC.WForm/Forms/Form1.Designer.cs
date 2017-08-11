@@ -41,6 +41,8 @@
             this.ordenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeVentaDiariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteMensualDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.combosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +51,7 @@
             this.mantenimientoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteUltimos7DiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,9 +161,27 @@
             // 
             // reporteriaToolStripMenuItem
             // 
+            this.reporteriaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteDeVentaDiariaToolStripMenuItem,
+            this.reporteMensualDeVentasToolStripMenuItem,
+            this.reporteUltimos7DiasToolStripMenuItem});
             this.reporteriaToolStripMenuItem.Name = "reporteriaToolStripMenuItem";
             this.reporteriaToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.reporteriaToolStripMenuItem.Text = "Reporteria";
+            // 
+            // reporteDeVentaDiariaToolStripMenuItem
+            // 
+            this.reporteDeVentaDiariaToolStripMenuItem.Name = "reporteDeVentaDiariaToolStripMenuItem";
+            this.reporteDeVentaDiariaToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.reporteDeVentaDiariaToolStripMenuItem.Text = "Reporte De venta diaria";
+            this.reporteDeVentaDiariaToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVentaDiariaToolStripMenuItem_Click);
+            // 
+            // reporteMensualDeVentasToolStripMenuItem
+            // 
+            this.reporteMensualDeVentasToolStripMenuItem.Name = "reporteMensualDeVentasToolStripMenuItem";
+            this.reporteMensualDeVentasToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.reporteMensualDeVentasToolStripMenuItem.Text = "Reporte Mensual de Ventas";
+            this.reporteMensualDeVentasToolStripMenuItem.Click += new System.EventHandler(this.reporteMensualDeVentasToolStripMenuItem_Click);
             // 
             // combosToolStripMenuItem
             // 
@@ -222,6 +243,13 @@
             this.mantenimientoToolStripMenuItem3.Text = "Mantenimiento";
             this.mantenimientoToolStripMenuItem3.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem3_Click);
             // 
+            // reporteUltimos7DiasToolStripMenuItem
+            // 
+            this.reporteUltimos7DiasToolStripMenuItem.Name = "reporteUltimos7DiasToolStripMenuItem";
+            this.reporteUltimos7DiasToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.reporteUltimos7DiasToolStripMenuItem.Text = "Reporte Ultimos 7 Dias";
+            this.reporteUltimos7DiasToolStripMenuItem.Click += new System.EventHandler(this.reporteUltimos7DiasToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +293,9 @@
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem mesasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeVentaDiariaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteMensualDeVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteUltimos7DiasToolStripMenuItem;
     }
 }
 

@@ -85,5 +85,26 @@ namespace SARC.WForm
             formulario.MdiParent = this;
             formulario.Show();
         }
+
+        private void reporteDeVentaDiariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormReporteAlimentos formulario = new Forms.FormReporteAlimentos();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void reporteMensualDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.ReporteMensualDeVentas formulario = new Forms.ReporteMensualDeVentas();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void reporteUltimos7DiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Reporteultimo7Dias formulario = new Forms.Reporteultimo7Dias();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
     }
 }
