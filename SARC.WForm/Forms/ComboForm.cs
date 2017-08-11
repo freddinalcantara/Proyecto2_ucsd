@@ -75,6 +75,12 @@ namespace SARC.WForm
         {
             //TODO: Validate price is not blank
             //TODO: Validate price is a numeric value
+            if (txtPrice.Text == "")
+            {
+                MessageBox.Show("Se necesita un precio");
+                return;
+            }
+            //if(LbCombos.)
             Combo combo = new Combo();
             combo.Price = Int32.Parse(txtPrice.Text);
             foreach (Food food in LbCombos.Items)

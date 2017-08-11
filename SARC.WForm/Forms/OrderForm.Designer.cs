@@ -46,10 +46,6 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtSubTotal = new MetroFramework.Controls.MetroTextBox();
             this.txtITBIS = new MetroFramework.Controls.MetroTextBox();
             this.txtTotal = new MetroFramework.Controls.MetroTextBox();
@@ -62,6 +58,10 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.BtnProcesarFactura = new MetroFramework.Controls.MetroButton();
+            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -240,6 +240,7 @@
             // 
             // metroGrid1
             // 
+            this.metroGrid1.AllowUserToAddRows = false;
             this.metroGrid1.AllowUserToDeleteRows = false;
             this.metroGrid1.AllowUserToResizeRows = false;
             this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -289,30 +290,6 @@
             this.metroGrid1.TabIndex = 15;
             this.metroGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
             // 
-            // CANTIDAD
-            // 
-            this.CANTIDAD.HeaderText = "CANTIDAD";
-            this.CANTIDAD.Name = "CANTIDAD";
-            this.CANTIDAD.ReadOnly = true;
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
-            this.PRECIO.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Remover";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // txtSubTotal
             // 
             // 
@@ -332,6 +309,7 @@
             this.txtSubTotal.MaxLength = 32767;
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.PasswordChar = '\0';
+            this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSubTotal.SelectedText = "";
             this.txtSubTotal.SelectionLength = 0;
@@ -395,6 +373,7 @@
             this.txtTotal.MaxLength = 32767;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtTotal.SelectedText = "";
             this.txtTotal.SelectionLength = 0;
@@ -484,6 +463,7 @@
             // 
             // BtnProcesarFactura
             // 
+            this.BtnProcesarFactura.Enabled = false;
             this.BtnProcesarFactura.Location = new System.Drawing.Point(24, 584);
             this.BtnProcesarFactura.Name = "BtnProcesarFactura";
             this.BtnProcesarFactura.Size = new System.Drawing.Size(100, 23);
@@ -491,6 +471,32 @@
             this.BtnProcesarFactura.Text = "Procesar Factura";
             this.BtnProcesarFactura.UseSelectable = true;
             this.BtnProcesarFactura.Click += new System.EventHandler(this.BtnProcesarFactura_Click);
+            // 
+            // CANTIDAD
+            // 
+            this.CANTIDAD.HeaderText = "CANTIDAD";
+            this.CANTIDAD.Name = "CANTIDAD";
+            this.CANTIDAD.ReadOnly = true;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
+            this.PRECIO.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Remover";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Text = "Remover";
+            this.Column1.UseColumnTextForButtonValue = true;
             // 
             // OrderForm
             // 
@@ -551,10 +557,6 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroGrid metroGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
-        private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private MetroFramework.Controls.MetroTextBox txtSubTotal;
         private MetroFramework.Controls.MetroTextBox txtITBIS;
         private MetroFramework.Controls.MetroTextBox txtTotal;
@@ -567,5 +569,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton BtnProcesarFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

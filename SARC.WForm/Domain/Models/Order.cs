@@ -20,5 +20,20 @@ namespace SARC.WForm.Domain.Models
         {
             this.OrderDetails = new HashSet<OrdenDetail>();
         }
+
+        public decimal SubTotal()
+        {
+            decimal subtotal = 0;
+            foreach (var orderDetail in OrderDetails)
+            {
+                subtotal += orderDetail.ItemPrice;
+            }
+            return subtotal;
+        }
+
+        public decimal Total()
+        {
+            return SubTotal() + SubTotal() * 0.18m;
+        }
     }
 }

@@ -41,9 +41,9 @@ namespace SARC.WForm
 
         private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FacturaForm formulario = new FacturaForm();
-            formulario.MdiParent = this;
-            formulario.Show();
+            //FacturaForm formulario = new FacturaForm();
+            //formulario.MdiParent = this;
+            //formulario.Show();
         }
 
         private void ordenarToolStripMenuItem_Click(object sender, EventArgs e)
