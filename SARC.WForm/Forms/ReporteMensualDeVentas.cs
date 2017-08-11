@@ -30,7 +30,7 @@ namespace SARC.WForm.Forms
             {
                 conexion.Open();
 
-                var query = "select d.item as Articulo,d.itemprice as Precio,CAST(o.createdat as date)as FechaVenta,CONCAT(c.Name,' ',c.LastName) as Cliente from ordendetails d , orders o,Clientes c where d.id = o.id and o.Cliente_Id = c.Id and MONTH(o.CreatedAt) = MONTH(GETDATE()) order by DAY(o.CreatedAt)";
+                var query = "select d.item as Articulo,d.itemprice as Precio,CONVERT(VARCHAR(3),o.createdat,100) as Mes,CONCAT(c.Name,' ',c.LastName) as Cliente from ordendetails d , orders o,Clientes c where d.id = o.id and o.Cliente_Id = c.Id and MONTH(o.CreatedAt) = MONTH(GETDATE()) order by DAY(o.CreatedAt)";
                 var dataAdapter = new SqlDataAdapter(query, conexion);
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
                 var ds = new DataSet();

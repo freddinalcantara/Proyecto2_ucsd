@@ -106,5 +106,19 @@ namespace SARC.WForm
             formulario.MdiParent = this;
             formulario.Show();
         }
+
+        private void clienteFavoritosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.ReporteClienteMasConsume formulario = new Forms.ReporteClienteMasConsume();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void desconectarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FormInicioSesion formulario = new Forms.FormInicioSesion();
+            formulario.Show();
+            this.Close();
+        }
     }
 }

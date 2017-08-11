@@ -80,7 +80,10 @@ namespace SARC.WForm
                 MessageBox.Show("Se necesita un precio");
                 return;
             }
-            //if(LbCombos.)
+            if(LbCombos.Items.Count <= 0)
+            {
+                MessageBox.Show("Se necesita almenos 1 producto para crear un combo");
+            }
             Combo combo = new Combo();
             combo.Price = Int32.Parse(txtPrice.Text);
             foreach (Food food in LbCombos.Items)
@@ -89,7 +92,9 @@ namespace SARC.WForm
             }
             _dbContext.Combos.Add(combo);
             _dbContext.SaveChanges();
-            //combo.Foods.Add
+            MessageBox.Show("Combo fue creado satisfactoriamente");
+            metroGrid1.DataSource = _dbContext.Combos.ToList();
+
 
         }
 
@@ -113,6 +118,7 @@ namespace SARC.WForm
             var Combo = _dbContext.Combos.FirstOrDefault(c => c.Id == ComboId);
             _dbContext.Combos.Remove(Combo);
             _dbContext.SaveChanges();
+
         }
     }
 }

@@ -36,13 +36,12 @@
             this.reservarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeVentaDiariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteMensualDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteUltimos7DiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.combosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +50,7 @@
             this.mantenimientoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteUltimos7DiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteFavoritosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +62,6 @@
             this.inicioToolStripMenuItem,
             this.reservacionesToolStripMenuItem,
             this.clientewsToolStripMenuItem,
-            this.facturasToolStripMenuItem,
             this.ordenToolStripMenuItem,
             this.reporteriaToolStripMenuItem,
             this.combosToolStripMenuItem,
@@ -90,6 +88,7 @@
             this.desconectarToolStripMenuItem.Name = "desconectarToolStripMenuItem";
             this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.desconectarToolStripMenuItem.Text = "Desconectar";
+            this.desconectarToolStripMenuItem.Click += new System.EventHandler(this.desconectarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -129,21 +128,6 @@
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             this.mantenimientoToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem_Click);
             // 
-            // facturasToolStripMenuItem
-            // 
-            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.facturacionToolStripMenuItem});
-            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(78, 22);
-            this.facturasToolStripMenuItem.Text = "Facturas";
-            // 
-            // facturacionToolStripMenuItem
-            // 
-            this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
-            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.facturacionToolStripMenuItem.Text = "Facturacion";
-            this.facturacionToolStripMenuItem.Click += new System.EventHandler(this.facturacionToolStripMenuItem_Click);
-            // 
             // ordenToolStripMenuItem
             // 
             this.ordenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -164,7 +148,8 @@
             this.reporteriaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteDeVentaDiariaToolStripMenuItem,
             this.reporteMensualDeVentasToolStripMenuItem,
-            this.reporteUltimos7DiasToolStripMenuItem});
+            this.reporteUltimos7DiasToolStripMenuItem,
+            this.clienteFavoritosToolStripMenuItem});
             this.reporteriaToolStripMenuItem.Name = "reporteriaToolStripMenuItem";
             this.reporteriaToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.reporteriaToolStripMenuItem.Text = "Reporteria";
@@ -182,6 +167,13 @@
             this.reporteMensualDeVentasToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.reporteMensualDeVentasToolStripMenuItem.Text = "Reporte Mensual de Ventas";
             this.reporteMensualDeVentasToolStripMenuItem.Click += new System.EventHandler(this.reporteMensualDeVentasToolStripMenuItem_Click);
+            // 
+            // reporteUltimos7DiasToolStripMenuItem
+            // 
+            this.reporteUltimos7DiasToolStripMenuItem.Name = "reporteUltimos7DiasToolStripMenuItem";
+            this.reporteUltimos7DiasToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.reporteUltimos7DiasToolStripMenuItem.Text = "Reporte Ultimos 7 Dias";
+            this.reporteUltimos7DiasToolStripMenuItem.Click += new System.EventHandler(this.reporteUltimos7DiasToolStripMenuItem_Click);
             // 
             // combosToolStripMenuItem
             // 
@@ -243,12 +235,12 @@
             this.mantenimientoToolStripMenuItem3.Text = "Mantenimiento";
             this.mantenimientoToolStripMenuItem3.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem3_Click);
             // 
-            // reporteUltimos7DiasToolStripMenuItem
+            // clienteFavoritosToolStripMenuItem
             // 
-            this.reporteUltimos7DiasToolStripMenuItem.Name = "reporteUltimos7DiasToolStripMenuItem";
-            this.reporteUltimos7DiasToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-            this.reporteUltimos7DiasToolStripMenuItem.Text = "Reporte Ultimos 7 Dias";
-            this.reporteUltimos7DiasToolStripMenuItem.Click += new System.EventHandler(this.reporteUltimos7DiasToolStripMenuItem_Click);
+            this.clienteFavoritosToolStripMenuItem.Name = "clienteFavoritosToolStripMenuItem";
+            this.clienteFavoritosToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.clienteFavoritosToolStripMenuItem.Text = "Cliente Favoritos";
+            this.clienteFavoritosToolStripMenuItem.Click += new System.EventHandler(this.clienteFavoritosToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -278,13 +270,11 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reservacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientewsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reservarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem combosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
@@ -296,6 +286,7 @@
         private System.Windows.Forms.ToolStripMenuItem reporteDeVentaDiariaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteMensualDeVentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteUltimos7DiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteFavoritosToolStripMenuItem;
     }
 }
 

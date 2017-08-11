@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace SARC.WForm.Forms
 {
-    public partial class Reporteultimo7Dias : MetroFramework.Forms.MetroForm
+    public partial class ReporteClienteMasConsume : MetroFramework.Forms.MetroForm
     {
         private EFContext _dbContext = new EFContext();
-        public Reporteultimo7Dias()
+        public ReporteClienteMasConsume()
         {
             InitializeComponent();
             Llenartabla();
@@ -30,7 +30,7 @@ namespace SARC.WForm.Forms
             {
                 conexion.Open();
 
-                var query = "select d.item as Articulo,d.itemprice as Precio,CONVERT(VARCHAR(19),o.createdat) as FechaVenta,CONCAT(c.Name,' ',c.LastName) as Cliente from ordendetails d , orders o,Clientes c where d.id = o.id and o.Cliente_Id = c.Id and MONTH(o.CreatedAt) = MONTH(GETDATE()) order by DAY(o.CreatedAt)";
+                var query = "select sum(d.ItemPrice) as Total,CONCAT(c.Name, ' ', c.LastName) as Cliente from ordendetails d, orders o, Clientes c where d.id = o.id and o.Cliente_Id = c.Id group by c.Name,c.LastName ORDER BY Total DESC";
                 var dataAdapter = new SqlDataAdapter(query, conexion);
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
                 var ds = new DataSet();

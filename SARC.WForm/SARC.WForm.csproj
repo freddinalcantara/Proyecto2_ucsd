@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -175,6 +175,12 @@
     <Compile Include="Forms\OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReporteClienteMasConsume.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReporteClienteMasConsume.Designer.cs">
+      <DependentUpon>ReporteClienteMasConsume.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReporteMensualDeVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReporteClienteMasConsume.resx">
+      <DependentUpon>ReporteClienteMasConsume.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReporteMensualDeVentas.resx">
       <DependentUpon>ReporteMensualDeVentas.cs</DependentUpon>

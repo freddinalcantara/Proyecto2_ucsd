@@ -77,6 +77,7 @@
             this.TxtComboName.Size = new System.Drawing.Size(223, 23);
             this.TxtComboName.TabIndex = 0;
             this.TxtComboName.UseSelectable = true;
+            this.TxtComboName.Visible = false;
             this.TxtComboName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TxtComboName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 

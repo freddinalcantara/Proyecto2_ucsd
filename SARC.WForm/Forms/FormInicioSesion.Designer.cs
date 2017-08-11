@@ -93,7 +93,7 @@
             this.TxtLoginPassword.Location = new System.Drawing.Point(148, 165);
             this.TxtLoginPassword.MaxLength = 32767;
             this.TxtLoginPassword.Name = "TxtLoginPassword";
-            this.TxtLoginPassword.PasswordChar = '\0';
+            this.TxtLoginPassword.PasswordChar = '*';
             this.TxtLoginPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TxtLoginPassword.SelectedText = "";
             this.TxtLoginPassword.SelectionLength = 0;
@@ -110,7 +110,7 @@
             this.LblPassword.AutoSize = true;
             this.LblPassword.Location = new System.Drawing.Point(148, 142);
             this.LblPassword.Name = "LblPassword";
-            this.LblPassword.Size = new System.Drawing.Size(64, 19);
+            this.LblPassword.Size = new System.Drawing.Size(63, 19);
             this.LblPassword.TabIndex = 2;
             this.LblPassword.Text = "Password";
             // 
